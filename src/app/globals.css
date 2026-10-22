@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+
+  /* Rosegold Palette (Design Tokens as per PRD & Satucerita) */
+  --rg-primary: #914853;
+  --rg-secondary: #7a3a44;
+  --rg-dark: #5c2a33;
+  --rg-bg-powder: #fdf2f4;
+  --rg-accent: #d8a3ac;
+  --rg-gold: #c5a059;
+  --rg-gold-dark: #ad8b3a;
+
+  --cover-bg: linear-gradient(135deg, #5c2a33 0%, #914853 50%, #7a3a44 100%);
+  --btn-radius: 14px;
+  --card-radius: 24px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #333333;
+  background-color: #faf8f8;
+  overflow-x: hidden;
+}
+
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(145, 72, 83, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(145, 72, 83, 0.1);
+}
+
+.glass-card-dark {
+  background: rgba(45, 20, 26, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(216, 163, 172, 0.2);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(145, 72, 83, 0.15);
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  background: #ffffff;
+  border-color: var(--rg-primary);
+  box-shadow: 0 0 0 3px rgba(145, 72, 83, 0.15);
+  outline: none;
+}
+
+/* Smooth Button & Glow */
+.btn-rosegold {
+  background: linear-gradient(135deg, #914853 0%, #7a3a44 100%);
+  color: #ffffff;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 20px -4px rgba(145, 72, 83, 0.4);
+}
+
+.btn-rosegold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -4px rgba(145, 72, 83, 0.5);
+  filter: brightness(1.05);
+}
+
+.btn-rosegold-outline {
+  border: 1.5px solid var(--rg-primary);
+  color: var(--rg-primary);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-rosegold-outline:hover {
+  background: rgba(145, 72, 83, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Animations from PRD */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-3deg) translateY(0);
+  }
+  50% {
+    transform: rotate(3deg) translateY(-6px);
+  }
+}
+
+@keyframes butterflyWing {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.4);
+  }
+}
+
+@keyframes sheen {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 5s ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
+}
+
+.animate-butterfly {
+  animation: butterflyWing 0.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.sheen-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  animation: sheen 4s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1edea;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8a3ac;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #914853;
+}

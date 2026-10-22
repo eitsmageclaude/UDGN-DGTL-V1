@@ -1,0 +1,2237 @@
+<body class="rg-theme min-h-screen antialiased" style="--td-page:#FBF6F4;--td-ink:#201F1F;--td-text:#3d3332;--td-muted:rgba(32,31,31,0.68);--td-accent:#914853;--td-card:#ffffff;--td-card-border:1px solid rgba(145,72,83,0.12);--td-card-radius:1rem;--td-card-shadow:0 10px 36px rgba(145,72,83,0.1);--td-btn-bg:linear-gradient(135deg,#7A3A44 0%,#914853 42%,#B06E7A 78%,#C9A78A 100%);--td-btn-ink:#ffffff;--td-btn-radius:1rem;--td-btn-border:1px solid rgba(255,255,255,0.45);--td-btn-shadow:0 10px 28px rgba(145,72,83,0.22);--td-btn-weight:700;--td-btn-hover:translateY(-1px);--td-btn-shadow-hover:0 18px 48px rgba(145,72,83,0.16);--td-btn-hover-filter:none"><div data-mitra-error="" hidden="" style="display:none"></div>
+    <link rel="stylesheet" href="/admin-theme/plugins/fontawesome-free/css/all.min.css">
+    <link rel="preload" as="style" href="https://satucerita.eventdigital.id/build/assets/guest-CvLd8-P4.css"><link rel="stylesheet" href="https://satucerita.eventdigital.id/build/assets/guest-CvLd8-P4.css" data-navigate-track="reload">            <link rel="preload" as="style" href="https://satucerita.eventdigital.id/build/assets/rosegold-DgMLsmsG.css"><link rel="stylesheet" href="https://satucerita.eventdigital.id/build/assets/rosegold-DgMLsmsG.css" data-navigate-track="reload">        <style>
+        body {
+            background: var(--td-page, #fff);
+            color: var(--td-text, #3a4a5c);
+        }
+        .td-detail {
+            background: transparent;
+            color: var(--td-text, #3a4a5c);
+        }
+        .td-kicker { color: var(--td-accent, #b4536a); }
+        .td-heading { color: var(--td-ink, #1c2430); }
+        .td-muted { color: var(--td-muted, #6b7280); }
+        .td-text { color: var(--td-text, #3a4a5c); }
+        .td-story { white-space: pre-line; }
+        .td-back {
+            color: var(--td-muted, #6b7280);
+            text-decoration: none;
+        }
+        .td-back:hover { color: var(--td-ink, #1c2430); }
+        .td-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        .td-stat {
+            background: var(--td-card, #fff);
+            border: var(--td-card-border, 1px solid rgba(28, 36, 48, 0.1));
+            border-radius: var(--td-card-radius, 1rem);
+            box-shadow: var(--td-card-shadow, none);
+            padding: 1rem;
+        }
+        .td-preview-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--td-btn-bg, #b4536a);
+            color: var(--td-btn-ink, #fff);
+            font-weight: var(--td-btn-weight, 700);
+            font-size: 0.875rem;
+            line-height: 1.2;
+            padding: 0.7rem 1.5rem;
+            border: var(--td-btn-border, 0 solid transparent);
+            border-radius: var(--td-btn-radius, 9999px);
+            box-shadow: var(--td-btn-shadow, none);
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+        }
+        .td-preview-btn:hover {
+            color: var(--td-btn-ink, #fff);
+            transform: var(--td-btn-hover, translateY(-1px));
+            box-shadow: var(--td-btn-shadow-hover, var(--td-btn-shadow, none));
+            filter: var(--td-btn-hover-filter, none);
+        }
+        .td-phone {
+            position: relative;
+            width: min(100%, 292px);
+            aspect-ratio: 71.9 / 150;
+            margin-inline: auto;
+            border-radius: 46px;
+            background: linear-gradient(155deg, #5c5c60 0%, #2a2a2e 16%, #1a1a1c 46%, #3a3a3e 78%, #121214 100%);
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, 0.28),
+                inset 0 0 0 3px #0c0c0e,
+                0 18px 36px rgba(15, 23, 42, 0.16);
+        }
+        .td-phone-screen {
+            position: absolute;
+            inset: 8px;
+            overflow: hidden;
+            border-radius: 38px;
+            background: #000;
+        }
+        .td-phone-screen iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: #fff;
+        }
+        .td-island {
+            position: absolute;
+            z-index: 2;
+            top: 11px;
+            left: 50%;
+            width: 72px;
+            height: 20px;
+            transform: translateX(-50%);
+            border-radius: 999px;
+            background: #000;
+            pointer-events: none;
+        }
+        .td-key {
+            position: absolute;
+            width: 3px;
+            border-radius: 2px;
+            background: linear-gradient(#8a8a8e, #2a2a2e);
+        }
+        .td-key-action { left: -3px; top: 16%; height: 22px; }
+        .td-key-vol-up { left: -3px; top: 24%; height: 42px; }
+        .td-key-vol-down { left: -3px; top: 35%; height: 42px; }
+        .td-key-power { right: -3px; top: 26%; height: 64px; }
+        .td-key-camera { right: -3px; top: 42%; height: 36px; }
+        .td-layout {
+            display: grid;
+            align-items: start;
+            gap: 2.5rem;
+        }
+        @media (min-width: 1024px) {
+            .td-layout {
+                grid-template-columns: minmax(0, 1fr) 320px;
+                gap: 3.25rem;
+            }
+            .td-copy { order: 1; }
+            .td-stage {
+                order: 2;
+                position: sticky;
+                top: 5.5rem;
+                align-self: start;
+            }
+            .td-phone {
+                width: min(292px, calc((100dvh - 14rem) * 0.479));
+            }
+        }
+    </style>
+
+
+
+            <div id="rg-nav-float-wrap" class="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-4 md:pt-4">
+    <header id="rg-nav" class="rg-header pointer-events-auto mx-auto max-w-6xl rounded-2xl font-rosegold-heading">
+        <div id="rg-nav-bar" class="flex items-center justify-between gap-2 px-3 py-2 md:px-4 md:py-2.5">
+            <a class="flex shrink-0 items-center gap-2.5 min-w-0" href="/">
+                <img src="" alt=" Logo" class="h-7 w-auto object-contain md:max-h-9">
+                <div class="hidden sm:flex flex-col min-w-0">
+                    <span class="text-xs md:text-sm font-bold tracking-tight text-rosegold-black truncate"></span>
+                    <span class="text-[10px] font-semibold text-rosegold-primary truncate">Undangan Digital</span>
+                </div>
+            </a>
+
+            <button id="rg-mobile-menu-btn" class="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl border border-white/40 bg-white/50 text-sm text-rosegold-black transition hover:bg-white/70 md:hidden" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="rg-mobile-menu">
+                <i class="fas fa-bars" id="rg-mobile-menu-icon" aria-hidden="true"></i>
+            </button>
+
+            <nav class="hidden items-center gap-0.5 md:flex">
+                <a data-rg-nav="home" class="rg-nav-link " href="/">Beranda</a>
+                <a data-rg-nav="feature" class="rg-nav-link " href="/about-us#feature">Fitur</a>
+                <a data-rg-nav="tema" class="rg-nav-link" href="/#katalog-tema">Tema</a>
+                <a data-rg-nav="pricing" class="rg-nav-link" href="/about-us#pricing">Harga</a>
+                                <a data-rg-nav="product" class="rg-nav-link " href="/product">Produk</a>
+                                                <a href="/login" class="rg-nav-link">Log In</a>
+                <a href="/register" class="rg-nav-cta ml-1 inline-flex items-center gap-2">
+                    <span>Daftar</span>
+                    <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/20">
+                        <i class="fa-solid fa-user-plus text-[0.55rem]"></i>
+                    </span>
+                </a>
+            </nav>
+        </div>
+
+        <div id="rg-mobile-menu" class="hidden max-h-[min(70dvh,28rem)] overflow-y-auto overscroll-contain border-t border-white/30 bg-white/90 backdrop-blur-xl md:hidden">
+            <div class="space-y-0.5 px-3 py-3">
+                <a href="/" data-rg-nav="home" class="rg-mobile-nav-link ">Beranda</a>
+                <a href="/about-us#feature" data-rg-nav="feature" class="rg-mobile-nav-link ">Fitur</a>
+                <a href="/#katalog-tema" data-rg-nav="tema" class="rg-mobile-nav-link">Tema</a>
+                <a href="/about-us#pricing" data-rg-nav="pricing" class="rg-mobile-nav-link">Harga</a>
+                                <a href="/product" data-rg-nav="product" class="rg-mobile-nav-link ">Produk</a>
+                                                <a href="/login" class="rg-mobile-nav-link">Log In</a>
+                <a href="/register" class="rg-mobile-nav-link rg-btn-primary mt-1 block rounded-xl px-3 py-2.5 text-center text-xs font-bold uppercase tracking-wide shadow-md">Daftar</a>
+            </div>
+        </div>
+    </header>
+</div>
+<div id="rg-nav-spacer" aria-hidden="true" style="height: 88px;"></div>
+
+<script>
+(function () {
+    var GAP = 12;
+    var nav = document.getElementById('rg-nav');
+    var spacer = document.getElementById('rg-nav-spacer');
+    var btn = document.getElementById('rg-mobile-menu-btn');
+    var menu = document.getElementById('rg-mobile-menu');
+    var icon = document.getElementById('rg-mobile-menu-icon');
+
+    function syncOffset() {
+        if (!nav) return;
+        var offset = Math.ceil(nav.getBoundingClientRect().bottom) + GAP;
+        document.documentElement.style.setProperty('--rg-nav-offset', offset + 'px');
+        if (spacer) spacer.style.height = offset + 'px';
+    }
+
+    function onScroll() {
+        if (!nav) return;
+        nav.classList.toggle('rg-nav-scrolled', window.scrollY > 12);
+    }
+
+    function normalizePath(pathname) {
+        var p = (pathname || '/').replace(/\/+$/, '');
+        return p === '' ? '/' : p;
+    }
+
+    function syncActiveNav() {
+        var path = normalizePath(window.location.pathname);
+        var hash = (window.location.hash || '').replace(/^#/, '');
+        var links = document.querySelectorAll('[data-rg-nav]');
+        var activeKey = '';
+
+        if (path.indexOf('about-us') !== -1) {
+            activeKey = hash === 'pricing' ? 'pricing' : 'feature';
+        } else if (path.indexOf('product') !== -1) {
+            activeKey = 'product';
+        } else if (path.indexOf('blog') !== -1) {
+            activeKey = 'blog';
+        } else if (path === '/') {
+            activeKey = hash === 'katalog-tema' ? 'tema' : 'home';
+        }
+
+        links.forEach(function (link) {
+            var key = link.getAttribute('data-rg-nav');
+            link.classList.toggle('is-active', key === activeKey);
+        });
+    }
+
+    function setMenuOpen(open) {
+        if (!menu || !btn) return;
+        menu.classList.toggle('hidden', !open);
+        if (nav) nav.classList.toggle('rg-nav-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (icon) {
+            icon.classList.toggle('fa-bars', !open);
+            icon.classList.toggle('fa-times', open);
+        }
+        document.body.style.overflow = open ? 'hidden' : '';
+        syncOffset();
+    }
+
+    syncOffset();
+    onScroll();
+    syncActiveNav();
+    window.addEventListener('load', syncOffset);
+    window.addEventListener('resize', syncOffset);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('hashchange', syncActiveNav);
+
+    if (typeof ResizeObserver !== 'undefined' && nav) {
+        new ResizeObserver(syncOffset).observe(nav);
+    }
+
+    if (btn && menu) {
+        btn.addEventListener('click', function () {
+            setMenuOpen(menu.classList.contains('hidden'));
+        });
+        menu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () { setMenuOpen(false); });
+        });
+    }
+})();
+</script>
+    
+    <main class="td-detail">
+        <div class="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+            <a href="/theme" class="td-back inline-flex items-center gap-2 text-sm font-semibold">
+                <i class="fas fa-arrow-left text-xs" aria-hidden="true"></i>
+                Kembali ke katalog
+            </a>
+
+            <div class="td-layout mt-6">
+                <div class="td-stage">
+                    <div class="td-phone">
+                        <span class="td-key td-key-action" aria-hidden="true"></span>
+                        <span class="td-key td-key-vol-up" aria-hidden="true"></span>
+                        <span class="td-key td-key-vol-down" aria-hidden="true"></span>
+                        <span class="td-key td-key-power" aria-hidden="true"></span>
+                        <span class="td-key td-key-camera" aria-hidden="true"></span>
+                        <div class="td-phone-screen">
+                            <iframe src="/theme/preview/serene-bloom" title="Tampilan mobile Serene Bloom"></iframe>
+                            <span class="td-island" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="td-copy">
+                    <p class="td-kicker text-xs font-bold uppercase tracking-wider">Detail tema</p>
+                    <h1 class="td-heading mt-2 text-2xl font-bold sm:text-3xl">Serene Bloom</h1>
+
+                                            <section class="mt-8">
+                            <h2 class="td-heading text-sm font-bold">Cerita tema</h2>
+                            <p class="td-text td-story mt-2 text-sm leading-relaxed sm:text-base">Serene Bloom adalah tema undangan digital yang menghadirkan nuansa romantis, lembut, dan tenang dengan sentuhan vintage elegan. Desainnya menampilkan kanopi bunga berwarna blush pink dan dusty rose yang mengalir lembut, dipadukan dengan rangkaian bunga putih dan burgundy yang anggun di kedua sisi. Latar belakang menampilkan pemandangan taman klasik Eropa dengan air mancur dan arsitektur indah, menciptakan suasana dreamy dan berkelas. Tipografi serif yang elegan semakin memperkuat kesan mewah namun tetap soft dan menenangkan.</p>
+                        </section>
+                    
+                    <section class="td-stats mt-8">
+                        <div class="td-stat">
+                            <p class="td-muted text-xs font-semibold uppercase tracking-wide">Undangan</p>
+                            <p class="td-heading mt-1 text-2xl font-bold">164</p>
+                            <p class="td-muted mt-1 text-xs leading-relaxed">undangan sudah memakai tema ini</p>
+                        </div>
+                        <div class="td-stat">
+                            <p class="td-muted text-xs font-semibold uppercase tracking-wide">Tamu</p>
+                            <p class="td-heading mt-1 text-2xl font-bold">1.632</p>
+                            <p class="td-muted mt-1 text-xs leading-relaxed">tamu sudah membuka undangan bertema ini</p>
+                        </div>
+                    </section>
+
+                                            <section class="mt-8">
+                                                            <h2 class="td-heading text-sm font-bold">Warna</h2>
+                                <ul class="mt-3 flex flex-wrap gap-4">
+                                                                            <li class="flex items-center gap-2">
+                                            <span class="h-9 w-9 rounded-full border border-black/10" style="background:#FFF3E3" title="#FFF3E3"></span>
+                                            <span class="td-text text-xs"><strong class="td-heading block">Aksen</strong>#FFF3E3</span>
+                                        </li>
+                                                                            <li class="flex items-center gap-2">
+                                            <span class="h-9 w-9 rounded-full border border-black/10" style="background:#623535" title="#623535"></span>
+                                            <span class="td-text text-xs"><strong class="td-heading block">Dasar</strong>#623535</span>
+                                        </li>
+                                                                            <li class="flex items-center gap-2">
+                                            <span class="h-9 w-9 rounded-full border border-black/10" style="background:#A08166" title="#A08166"></span>
+                                            <span class="td-text text-xs"><strong class="td-heading block">Lembut</strong>#A08166</span>
+                                        </li>
+                                                                    </ul>
+                                                                                        <p class="td-text td-story mt-4 text-sm leading-relaxed">Cocok untuk pasangan yang menginginkan undangan pernikahan dengan konsep romantis elegan, garden wedding, vintage romance, atau floral soft. Sangat sesuai bagi mempelai yang menyukai palet warna blush pink, burgundy, cream, dan nuansa dreamy European garden. Ideal untuk pernikahan outdoor, intimate wedding, atau acara dengan tema yang tenang, anggun, dan penuh keindahan bunga.</p>
+                                                    </section>
+                    
+                    <div class="mt-8 flex flex-wrap items-center gap-3">
+                        <a href="/theme/preview/serene-bloom" target="_blank" rel="noopener noreferrer" class="td-preview-btn">
+                            <i class="fas fa-eye text-xs" aria-hidden="true"></i>
+                            Lihat Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+            <script>
+    window.phone = "6287785998700";
+    window.domain = "satucerita.eventdigital.id";
+</script>
+
+<link rel="stylesheet" href="/landing-theme/floating-wa/floating-wpp.min.css">
+<style>
+    .floating-wpp { z-index: 9998 !important; }
+    .floating-wpp .floating-wpp-button { background-color: #25D366 !important; }
+</style>
+
+<script src="/admin-theme/plugins/jquery/jquery.min.js"></script>
+
+<script src="/landing-theme/floating-wa/floating-wpp.min.js"></script>
+
+
+<div id="mitra-script-body"><script type="text/javascript">
+$(function () {
+      $("#waButton").floatingWhatsApp({
+          phone: phone,
+          popupMessage: "Hallo, apakah ada yang bisa kami bantu?",
+          message: "Halo, Saya mau bertanya tentang paket pembuatan undangan.",
+          message2: "Halo, Saya mau bertanya tentang paket pembuatan undangan.",
+          showPopup: true,
+          showOnIE: true,
+          headerTitle: "Whatsap Chat",
+          headerColor: "#085E53",
+          backgroundColor: "#ffffff00",
+          buttonImage: `<img src="/admin-theme/dist/img/wa-icon.png" />`
+      });
+  });
+</script></div>
+
+<a id="modern-wa-btn" href="https://wa.me/6287785998700" data-m-attr="href:brand.wa_url" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp" style="position:fixed; bottom:1.25rem; right:1rem; z-index:9999; touch-action:none; user-select:none;" class="z-50 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-green-600/30 transition duration-300 hover:scale-105 hover:bg-[#20bd5a] hover:shadow-xl sm:bottom-7 sm:right-7" data-wa-bound="1">
+    <svg class="h-8 w-8" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+    </svg>
+</a>
+<script>
+(function() {
+    function fallbackBtn() {
+        var nodes = document.querySelectorAll('#modern-wa-btn');
+        for (var i = 1; i < nodes.length; i++) nodes[i].remove();
+        return nodes[0] || null;
+    }
+
+    function hideIfCustomWa() {
+        var btn = fallbackBtn();
+        if (!btn) return false;
+        // Only hide fallback when floating widget button is actually rendered
+        var customBtn = document.querySelector('.floating-wpp .floating-wpp-button');
+        if (customBtn && customBtn.offsetWidth > 0 && customBtn.offsetHeight > 0) {
+            btn.style.display = 'none';
+            return true;
+        }
+        btn.style.display = '';
+        return false;
+    }
+
+    function bindDrag(btn) {
+        if (!btn || btn.dataset.waBound) return;
+        btn.dataset.waBound = '1';
+        let offset = { x: 0, y: 0 };
+        let isDown = false;
+
+        btn.addEventListener('mousedown', function(e) {
+        isDown = true;
+        offset = {
+            x: btn.offsetLeft - e.clientX,
+            y: btn.offsetTop - e.clientY
+        };
+        btn.style.transition = "none";
+        document.body.style.userSelect = "none";
+    }, false);
+
+    document.addEventListener('mouseup', function() {
+        isDown = false;
+        btn.style.transition = "";
+        document.body.style.userSelect = "";
+    }, false);
+
+    document.addEventListener('mousemove', function(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        let newLeft = e.clientX + offset.x;
+        let newTop = e.clientY + offset.y;
+        newLeft = Math.max(0, Math.min(window.innerWidth - btn.offsetWidth, newLeft));
+        newTop = Math.max(0, Math.min(window.innerHeight - btn.offsetHeight, newTop));
+        btn.style.left = newLeft + "px";
+        btn.style.top = newTop + "px";
+        btn.style.right = "auto";
+        btn.style.bottom = "auto";
+    }, false);
+
+    btn.addEventListener('touchstart', function(e) {
+        isDown = true;
+        const touch = e.touches[0];
+        offset = {
+            x: btn.offsetLeft - touch.clientX,
+            y: btn.offsetTop - touch.clientY
+        };
+        btn.style.transition = "none";
+    }, false);
+
+    btn.addEventListener('touchend', function() {
+        isDown = false;
+        btn.style.transition = "";
+    }, false);
+
+    btn.addEventListener('touchmove', function(e) {
+        if (!isDown) return;
+        const touch = e.touches[0];
+        let newLeft = touch.clientX + offset.x;
+        let newTop = touch.clientY + offset.y;
+        newLeft = Math.max(0, Math.min(window.innerWidth - btn.offsetWidth, newLeft));
+        newTop = Math.max(0, Math.min(window.innerHeight - btn.offsetHeight, newTop));
+        btn.style.left = newLeft + "px";
+        btn.style.top = newTop + "px";
+        btn.style.right = "auto";
+        btn.style.bottom = "auto";
+    }, { passive: true });
+
+        function setInitialPosition() {
+            btn.style.left = "";
+            btn.style.top = "";
+            btn.style.right = "1rem";
+            btn.style.bottom = "1.25rem";
+        }
+        setInitialPosition();
+        window.addEventListener('resize', setInitialPosition);
+    }
+
+    function sync() {
+        var btn = fallbackBtn();
+        if (btn) bindDrag(btn);
+        hideIfCustomWa();
+    }
+
+    document.addEventListener('mitra:ready', sync);
+    sync();
+    setTimeout(sync, 700);
+})();
+</script>
+<script>
+(function () {
+    var reduceMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    var selector = [
+        '[class*=\"animate-\"]',
+        '.blob',
+        '.fade-in',
+        '.still-track',
+        '.cover-slide-img',
+        '.pc-hero__glow-orb'
+    ].join(',');
+    var nodes = [];
+    var observer = null;
+
+    function setPaused(el, paused) {
+        if (!el || !el.style) return;
+        el.style.animationPlayState = paused ? 'paused' : 'running';
+    }
+
+    function pauseByVisibility() {
+        var hidden = document.hidden || (reduceMotion && reduceMotion.matches);
+        for (var i = 0; i < nodes.length; i++) {
+            if (hidden) {
+                setPaused(nodes[i], true);
+            } else if (!observer) {
+                setPaused(nodes[i], false);
+            } else {
+                setPaused(nodes[i], nodes[i].__ajOffscreen === true);
+            }
+        }
+    }
+
+    function bindObserver() {
+        if (!('IntersectionObserver' in window)) return;
+        observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                entry.target.__ajOffscreen = !entry.isIntersecting;
+                setPaused(entry.target, document.hidden || entry.target.__ajOffscreen || (reduceMotion && reduceMotion.matches));
+            });
+        }, { threshold: 0.05 });
+        for (var i = 0; i < nodes.length; i++) observer.observe(nodes[i]);
+    }
+
+    function refreshMotionNodes() {
+        if (observer) observer.disconnect();
+        observer = null;
+        nodes = Array.prototype.slice.call(document.querySelectorAll(selector));
+        if (!nodes.length) return;
+        if (!(reduceMotion && reduceMotion.matches)) bindObserver();
+        pauseByVisibility();
+    }
+
+    document.addEventListener('visibilitychange', pauseByVisibility);
+    document.addEventListener('mitra:ready', refreshMotionNodes);
+    if (reduceMotion && typeof reduceMotion.addEventListener === 'function') {
+        reduceMotion.addEventListener('change', refreshMotionNodes);
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', refreshMotionNodes, { once: true });
+    } else {
+        refreshMotionNodes();
+    }
+})();
+</script>
+
+<footer class="rg-footer text-white pt-8 pb-5 md:pt-10 md:pb-6">
+    <div class="max-w-6xl mx-auto px-3 md:px-4">
+        <div class="grid gap-6 md:gap-10 md:grid-cols-2 lg:grid-cols-4 items-start">
+            <div class="md:col-span-2">
+                <h2 class="text-base font-bold leading-snug md:text-2xl lg:text-3xl">
+                    <span data-m="preferences.footer_header">Satucerita</span>
+                </h2>
+                <div class="mt-2 mb-2 text-xs leading-relaxed text-slate-100 md:mt-3 md:text-sm lg:text-base">
+                    <p><span data-m-html="preferences.footer_subheader">Bersama Satu Cerita, membuat undangan digital jadi lebih mudah.
+Pilih desain favoritmu, sesuaikan dengan kebutuhanmu, lalu bagikan website undangan yang elegan hanya dengan satu tautan.</span></p>
+                </div>
+                <ul class="space-y-1.5 text-xs md:space-y-2 md:text-sm lg:text-base">
+                    <li class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-telephone shrink-0 md:h-4 md:w-4" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
+                        </svg>
+                        <a class="hover:underline break-all" href="https://wa.me/6287785998700" data-m-attr="href:brand.wa_url">
+                            +<span data-m="brand.phone">6287785998700</span>
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-envelope shrink-0 md:h-4 md:w-4" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"></path>
+                        </svg>
+                        <a class="hover:underline break-all" href="mailto:adindaristiani32@gmail.com" data-m-attr="href:brand.mailto">
+                            <span data-m="brand.email">adindaristiani32@gmail.com</span>
+                        </a>
+                    </li>
+                                    </ul>
+            </div>
+
+            <div>
+                <h5 class="text-xs font-semibold tracking-wide mb-2 md:text-sm md:mb-3">Links</h5>
+                <ul class="space-y-1.5 text-xs md:space-y-2 md:text-sm">
+                    <li>
+                        <a class="hover:underline" href="/about-us#feature">Paket</a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="/#katalog-tema">Produk</a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="/about-us#pricing"><span data-m="preferences.menu_5">Harga</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-xs font-semibold tracking-wide mb-2 md:text-sm md:mb-3">Support</h5>
+                <ul class="space-y-1.5 text-xs md:space-y-2 md:text-sm">
+                    <li>
+                        <a class="hover:underline" href="/faq"><span data-m="preferences.menu_10">FAQ</span></a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="/privacy-policy"><span data-m="preferences.menu_11">Kebijakan Privasi</span></a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="/term-condition"><span data-m="preferences.menu_12">Syarat &amp; Ketentuan</span></a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="https://api.whatsapp.com/send?phone=6287785998700" data-m-attr="href:brand.wa_send_url" target="_blank"><span data-m="preferences.menu_13">Hubungi Kami</span></a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="#" data-m-attr="href:brand.ig_url" target="_blank">
+                            <span data-m="preferences.menu_14">Ikuti Kami</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4453a1a1a5594232bd3fab47b67ab4f7&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body>
+
+
+
+
+
+<body class="invitation-loaded">
+<div id="app"><!----> <section class="sb-cover"><div class="sb-cover-left" style="background-image: url(&quot;https://satucerita.eventdigital.id/themes/_assets/demo/preview14/4.jpg&quot;);"><div aria-hidden="true" class="sb-cover-scrim"></div> <div class="sb-cover-left-copy"><p class="sb-kicker">Undangan Pernikahan</p> <h2><span>Naufal</span> <span class="sb-cover-amp">&amp;</span> <span>Kaila</span></h2></div></div> <div class="sb-cover-panel"><img src="/themes/serene-bloom/images/9-1.webp" alt="" class="sb-orn sb-dim sb-o-22cb2b1f"> <img src="/themes/serene-bloom/images/3-3.webp" alt="" class="sb-orn sb-o-3a1eb651"> <img src="/themes/serene-bloom/images/4-4.webp" alt="" class="sb-orn sb-o-171bf881"> <img src="/themes/serene-bloom/images/8-5.webp" alt="" class="sb-orn wind-effect1 sb-o-2e26e21e"> <img src="/themes/serene-bloom/images/8-5.webp" alt="" class="sb-orn wind-effect sb-o-72c4fa94"> <img src="/themes/serene-bloom/images/2-3.webp" alt="" class="sb-orn wind-effect sb-o-32ed5709"> <img src="/themes/serene-bloom/images/1-3.webp" alt="" class="sb-orn wind-effect1 sb-o-505bfde7"> <img src="/themes/serene-bloom/images/2-3.webp" alt="" class="sb-orn wind-effect2 sb-o-49297832"> <img src="/themes/serene-bloom/images/1-3.webp" alt="" class="sb-orn wind-effect2 sb-o-dfa36a7"> <div class="sb-cover-card"><i aria-hidden="true" class="sb-flourish"></i> <p class="sb-kicker">Undangan Pernikahan</p> <h1><span>Naufal</span> <span class="sb-cover-amp">&amp;</span> <span>Kaila</span></h1> <i aria-hidden="true" class="sb-flourish"></i> <p class="sb-date">Minggu, 27 September 2028</p> <div class="sb-dear"><small>Kepada Yth.<br> Bapak/Ibu/Saudara/i:</small> <strong>Nama Tamu</strong> <button type="button"><i class="fas fa-envelope"></i> <span>Buka Undangan</span></button></div></div></div></section> <audio loop="loop" src="https://s3.ap-southeast-1.wasabisys.com/ajakan-internal/music/Crush – Beautiful Goblin.mp3"></audio> <!----> <!----></div>
+
+<script src="/themes/eternal-arch/js/jquery.min.js"></script>
+<script src="/themes/_commons/js/wedding-nanogallery.js"></script>
+<script>
+let TYPE_API="yes",TYPE_ORDER="no",ORDER_URL=null,FETCH_COMMENT_URL=null,STORE_COMMENT_URL=null;
+const BASE_URL=window.location.protocol+'//'+window.location.hostname+(window.location.port?':'+window.location.port:'');
+const STATIC_URL=BASE_URL+'/themes/serene-bloom';
+const RESERVASI_URL="https://satucerita.eventdigital.id/theme/preview/serene-bloom/R3Vlc3Q=";
+if(TYPE_API==='yes'&&TYPE_ORDER==='yes'){ORDER_URL="theme";FETCH_COMMENT_URL=BASE_URL+'/api/guest/'+ORDER_URL+'/comment';STORE_COMMENT_URL=BASE_URL+'/api/guest/'+ORDER_URL+'/comment/store'}
+Vue.use(Toasted);
+new Vue({
+  el:'#app',
+  mixins:[invitationDataMixin,guestbookMixin,countdownCalendarMixin,clipboardGiftMixin,mediaHelpersMixin,audioManagerMixin,fullscreenCompatMixin,coupleNamesMixin],
+  data:{BASE_URL,STATIC_URL,ORDER_URL,RESERVASI_URL,datas:{},isLoading:true,isInvitationOpen:false,coverVisible:true,coverOpening:false,guestName:'Nama Tamu',linkQR:RESERVASI_URL,fontCostum:'',isPlaying:false,countdown:{days:'00',hours:'00',minutes:'00',seconds:'00'},intervalId:null,targetTime:null,galleryNanoInitialized:false,isFullscreenActive:false,comments:[],comment:{name:'',write_as:'',sosmed:'',message:''},isSubmitting:false,observer:null,coverSlideIndex:0,coverSlideTimer:null,ewallets:[
+    {name:'akun_shopeepay',value:'SHOPEEPAY',icon:'/themes/serene-bloom/images/shopee.png'},
+    {name:'akun_dana',value:'DANA',icon:'/themes/serene-bloom/images/dana.png'},
+    {name:'akun_ovo',value:'OVO',icon:'/themes/serene-bloom/images/ovo.png'},
+    {name:'akun_gopay',value:'GOPAY',icon:'/themes/serene-bloom/images/gopay.png'},
+    {name:'akun_link_aja',value:'LINKAJA',icon:'/themes/serene-bloom/images/linkaja.png'},
+    {name:'akun_isaku',value:'ISAKU',icon:'/themes/serene-bloom/images/isaku.png'}
+  ]},
+  computed:{
+    coverPhotos(){
+      const bg=this.datas && this.datas.background_image;
+      if(!bg || !bg.length) return [];
+      return bg.slice(0,5).map(item=>item && item.photo).filter(photo=>photo && !this.isPlaceholder(photo));
+    },
+    coverPhoto(){return this.coverPhotos[0] || null},
+    storyPhotos(){
+      const stories=(this.datas && this.datas.section_story && this.datas.section_story.stories) || [];
+      return stories.map(s=>s && s.photo).filter(photo=>photo && !this.isPlaceholder(photo));
+    },
+    galleryPhotos(){
+      const list=(this.datas.section_gallery && this.datas.section_gallery.gallery) || [];
+      return list.map(item=>{
+        if(!item) return null;
+        if(typeof item==='string') return this.isPlaceholder(item)?null:item;
+        const url=item.photo||item.url||item.src||item.image||null;
+        return (!url||this.isPlaceholder(url))?null:url;
+      }).filter(Boolean);
+    },
+    conveyorLoop(){
+      const photos=this.galleryPhotos;
+      if(!photos.length) return [];
+      const strip=[];
+      while(strip.length<8) strip.push.apply(strip,photos);
+      return strip.concat(strip);
+    },
+    conveyorDuration(){
+      const n=Math.max(this.conveyorLoop.length/2,8);
+      return (n*3.2)+'s';
+    },
+    initialsDisplay(){return (this.initialsLetters||[]).join(' | ')},
+    initialsLetters(){const names=this.coupleNamesOrdered||[];return names.map(n=>String(n||'').replace(/<[^>]*>/g,'').trim().charAt(0).toUpperCase()).filter(Boolean)},
+    fontCustom(){
+      const raw=String(this.fontCostum||'').trim();
+      if(!raw) return null;
+      const name=raw.replace(/^['"]+|['"]+$/g,'');
+      return '"'+name.replace(/"/g,'')+'"';
+    },
+    fontStyleVars(){
+      if(!this.fontCustom) return null;
+      return {'--font-display':this.fontCustom,'--font-nickname':this.fontCustom};
+    },
+    normalizedHashtag(){const h=this.datas.section_kata_mutiara?.hashtag||'';return h.startsWith('#')?h:'#'+h},
+    shouldAutoFullscreenOnOpen(){return false},
+    activeExtras(){
+      const d=this.datas;
+      return [
+        {key:'turut',active:d.section_turut_mengundang?.is_active,title:d.section_turut_mengundang?.title_special_guest,html:d.section_turut_mengundang?.turut_mengundang},
+        {key:'prokes',active:d.section_prokes?.is_active,title:d.section_prokes?.title_prokes,html:d.section_prokes?.label_prokes,image:d.section_prokes?.prokes_url}
+      ].filter(x=>x.active)
+    }
+  },
+  watch:{
+    coverPhotos(){this.startCoverSlideshow()}
+  },
+  created(){document.documentElement.classList.add('sb-locked');this.fetchInvitation();this.extractGuestName()},
+  beforeDestroy(){if(this.observer)this.observer.disconnect();this.stopCoverSlideshow()},
+  methods:{
+    isPlaceholder(url){return !url||typeof url!=='string'||/512x512|placeholder\/512|gallery[1-4]\.webp|default_preview\.(jpg|jpeg|png|webp|gif)|via\.placeholder|placehold\.co/i.test(url)},
+    hasMempelaiPhoto(url){return !!url&&!this.isPlaceholder(url)},
+    hasMapCoords(acara){
+      if(!acara) return false;
+      const lat=acara.lat,lng=acara.long;
+      if(lat==null||lng==null) return false;
+      const latStr=String(lat).trim(),lngStr=String(lng).trim();
+      return !!latStr&&!!lngStr&&latStr!=='null'&&lngStr!=='null';
+    },
+    mapEmbedSrc(acara){return 'https://maps.google.com/maps?q='+encodeURIComponent(acara.lat)+','+encodeURIComponent(acara.long)+'&z=15&output=embed'},
+    hasStoryPhoto(story){return !!(story?.photo&&!this.isPlaceholder(story.photo))},
+    getCalendarEventDetails(){return 'Jangan lupa menghadiri pernikahan '+this.coupleJoin(' dan ')},
+    onInvitationFetched(datas){if(datas.global_data?.font_library)this.loadFont(datas.global_data.font_library);this.fontCostum=datas.global_data?.font||'';this.startCoverSlideshow()},
+    stopCoverSlideshow(){if(this.coverSlideTimer){clearInterval(this.coverSlideTimer);this.coverSlideTimer=null}},
+    startCoverSlideshow(){
+      this.stopCoverSlideshow();
+      this.coverSlideIndex=0;
+      if(this.coverPhotos.length<2)return;
+      this.coverSlideTimer=setInterval(()=>{
+        const n=this.coverPhotos.length;
+        if(n<2){this.stopCoverSlideshow();this.coverSlideIndex=0;return}
+        this.coverSlideIndex=(this.coverSlideIndex+1)%n;
+      },4000);
+    },
+    resetCommentForm(){this.comment={name:'',write_as:'',sosmed:'',message:''}},
+    submitComment(){
+      const endpoints=this.getCommentEndpoints();
+      if(!endpoints.storeUrl)return;
+      this.isSubmitting=true;
+      const formdata=new FormData();
+      formdata.append('name',this.comment.name);
+      formdata.append('sosmed',this.comment.sosmed||'');
+      formdata.append('comment',this.comment.message);
+      if(this.comment.write_as)formdata.append('write_as',this.comment.write_as);
+      fetch(endpoints.storeUrl,{method:'POST',body:formdata})
+        .then(()=>{
+          if(this.$toasted)this.$toasted.show('Wish sent successfully!',{type:'success',duration:3000,theme:'bubble'});
+          this.fetchComments();
+          this.isSubmitting=false;
+          this.resetCommentForm();
+        })
+        .catch(()=>{
+          if(this.$toasted)this.$toasted.show('Failed to send wish.',{type:'error',duration:3000,theme:'bubble'});
+          this.isSubmitting=false;
+        });
+    },
+    fetchComments(){
+      if(!this.datas?.section_guest_book?.is_active){this.comments=[];return}
+      const endpoints=this.getCommentEndpoints();
+      if(!endpoints.fetchUrl){this.comments=this.previewGuestComments();return}
+      fetch(endpoints.fetchUrl,{method:'POST',headers:{'Content-Type':'application/json'}})
+        .then(response=>response.json())
+        .then(data=>{const list=(data&&data.data)||[];const normalized=list.map(row=>this.normalizeGuestBookComment(row));const additional=this.buildAdditionalGuestComment();this.comments=additional?[additional,...normalized]:normalized})
+        .catch(error=>console.error('Error fetching comments:',error))
+    },
+    loadFont(url){const link=document.createElement('link');link.rel='stylesheet';link.href=url;document.head.appendChild(link)},
+    openInvitation(){
+      if(this.shouldAutoFullscreenOnOpen)this.requestFullscreenOnOpen();
+      this.coverOpening=true;this.isInvitationOpen=true;document.documentElement.classList.remove('sb-locked');window.scrollTo(0,0);
+      this.$nextTick(()=>{this.playAudio();if(this.datas.section_rsvp_qr?.link_qr)this.generateQRCode();this.initSereneBloomNanoGallery();this.initMotionObserver()});
+      setTimeout(()=>{this.coverVisible=false},1500)
+    },
+    initMotionObserver(){if(this.observer)this.observer.disconnect();this.observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');this.observer.unobserve(e.target)}}),{threshold:.12});this.$nextTick(()=>document.querySelectorAll('.muncul,.zoom').forEach(el=>this.observer.observe(el)))},
+    initSereneBloomNanoGallery(){
+      if(this.galleryNanoInitialized||!this.datas.section_gallery?.is_active)return;this.galleryNanoInitialized=true;
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{
+        const galleryEl=document.getElementById('gallery-serene-bloom');
+        if(galleryEl){galleryEl.style.width='100%';galleryEl.style.maxWidth='100%'}
+        const inner=galleryEl&&galleryEl.closest('.sb-inner');
+        const measured=(galleryEl&&galleryEl.getBoundingClientRect().width)||(inner?inner.clientWidth:0);
+        const usable=Math.max(240,Math.floor(measured||320));
+        const cols=2;
+        const gutter=8;
+        const thumb=Math.floor((usable-gutter*(cols-1))/cols);
+        const list=(this.datas.section_gallery&&this.datas.section_gallery.gallery)||[];
+        const n=list.filter(item=>{
+          const url=item&&item.photo?String(item.photo).trim():'';
+          return /^https?:\/\//i.test(url);
+        }).length;
+        window.AjakanWeddingNanoGallery?.init({
+          elementId:'gallery-serene-bloom',
+          sectionGallery:this.datas.section_gallery,
+          assetsBase:'/themes/_commons',
+          useBento:false,
+          nanoOptions:{
+            thumbnailWidth:thumb,
+            thumbnailHeight:thumb,
+            thumbnailGutterWidth:gutter,
+            thumbnailGutterHeight:gutter,
+            thumbnailAlignment:'left',
+            thumbnailCrop:true,
+            galleryMosaic:this.buildSereneBloomGalleryMosaic(n)
+          },
+          logPrefix:'SereneBloom NanoGallery'
+        })
+      }))
+    },
+    buildSereneBloomGalleryMosaic(n){
+      const mosaic=[];
+      let row=1;
+      for(let i=0;i<n;i++){
+        if(i===n-1&&n%2===1){
+          mosaic.push({c:1,r:row,w:2,h:1});
+        }else{
+          const col=(i%2)+1;
+          mosaic.push({c:col,r:row,w:1,h:1});
+          if(col===2) row++;
+        }
+      }
+      return mosaic;
+    },
+    getQrConfig(){return{size:180,foreground:'#623535',background:'#FFF3E3'}}
+  }
+});
+</script><div id="4F1cTP0jy" role="status" aria-live="polite" aria-atomic="false"></div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4453a1a1a5594232bd3fab47b67ab4f7&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+
+    <div id="modalChrome" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:flex;justify-content:center;align-items:center;z-index:1000;visibility:visible;opacity:1;transition:opacity 0.3s ease,visibility 0.3s ease;">
+      <div style="background:#fff;padding:20px;border-radius:12px;text-align:center;width:90%;max-width:400px;box-shadow:0 4px 6px rgba(0,0,0,0.2);font-family:Arial, sans-serif;position:relative;">
+        <!-- Exclamation Mark Icon -->
+        <div style="display:flex;justify-content:center;align-items:center;margin-bottom:15px;">
+          <div style="width:30px;height:30px;border-radius:50%;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+            <span style="font-weight:bold;font-size:1.2em;">!</span>
+          </div>
+        </div>
+        <!-- Title -->
+        <h1 style="font-size:1.1em;margin-bottom:10px;font-weight:bold;font-family:inherit;color:#555;">Buka di Chrome untuk Pengalaman Terbaik</h1>
+        <!-- Description -->
+        <p style="font-size:0.9em;margin-bottom:20px;color:#555;line-height:1.5;">Untuk kenyamanan dan pengalaman yang lebih optimal, silakan buka link ini di browser Google Chrome</p>
+        <!-- Buttons -->
+        <div style="display:flex;justify-content:space-around;">
+          <button id="openChrome" style="padding:10px 20px;border:none;border-radius:20px;cursor:pointer;font-size:1em;background-color:#000;color:#fff;">Buka di Chrome</button>
+          <button id="closeModal" style="padding:10px 20px;border:none;border-radius:20px;cursor:pointer;font-size:1em;background-color:#ddd;color:#333;">Tetap di Sini</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+
+
+
+
+<body class="rg-theme min-h-screen antialiased" style="--td-page:#FBF6F4;--td-ink:#201F1F;--td-text:#3d3332;--td-muted:rgba(32,31,31,0.68);--td-accent:#914853;--td-card:#ffffff;--td-card-border:1px solid rgba(145,72,83,0.12);--td-card-radius:1rem;--td-card-shadow:0 10px 36px rgba(145,72,83,0.1);--td-btn-bg:linear-gradient(135deg,#7A3A44 0%,#914853 42%,#B06E7A 78%,#C9A78A 100%);--td-btn-ink:#ffffff;--td-btn-radius:1rem;--td-btn-border:1px solid rgba(255,255,255,0.45);--td-btn-shadow:0 10px 28px rgba(145,72,83,0.22);--td-btn-weight:700;--td-btn-hover:translateY(-1px);--td-btn-shadow-hover:0 18px 48px rgba(145,72,83,0.16);--td-btn-hover-filter:none"><div data-mitra-error="" hidden="" style="display:none"></div>
+    <link rel="stylesheet" href="/admin-theme/plugins/fontawesome-free/css/all.min.css">
+    <link rel="preload" as="style" href="https://satucerita.eventdigital.id/build/assets/guest-CvLd8-P4.css"><link rel="stylesheet" href="https://satucerita.eventdigital.id/build/assets/guest-CvLd8-P4.css" data-navigate-track="reload">            <link rel="preload" as="style" href="https://satucerita.eventdigital.id/build/assets/rosegold-DgMLsmsG.css"><link rel="stylesheet" href="https://satucerita.eventdigital.id/build/assets/rosegold-DgMLsmsG.css" data-navigate-track="reload">        <style>
+        body {
+            background: var(--td-page, #fff);
+            color: var(--td-text, #3a4a5c);
+        }
+        .td-detail {
+            background: transparent;
+            color: var(--td-text, #3a4a5c);
+        }
+        .td-kicker { color: var(--td-accent, #b4536a); }
+        .td-heading { color: var(--td-ink, #1c2430); }
+        .td-muted { color: var(--td-muted, #6b7280); }
+        .td-text { color: var(--td-text, #3a4a5c); }
+        .td-story { white-space: pre-line; }
+        .td-back {
+            color: var(--td-muted, #6b7280);
+            text-decoration: none;
+        }
+        .td-back:hover { color: var(--td-ink, #1c2430); }
+        .td-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        .td-stat {
+            background: var(--td-card, #fff);
+            border: var(--td-card-border, 1px solid rgba(28, 36, 48, 0.1));
+            border-radius: var(--td-card-radius, 1rem);
+            box-shadow: var(--td-card-shadow, none);
+            padding: 1rem;
+        }
+        .td-preview-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--td-btn-bg, #b4536a);
+            color: var(--td-btn-ink, #fff);
+            font-weight: var(--td-btn-weight, 700);
+            font-size: 0.875rem;
+            line-height: 1.2;
+            padding: 0.7rem 1.5rem;
+            border: var(--td-btn-border, 0 solid transparent);
+            border-radius: var(--td-btn-radius, 9999px);
+            box-shadow: var(--td-btn-shadow, none);
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+        }
+        .td-preview-btn:hover {
+            color: var(--td-btn-ink, #fff);
+            transform: var(--td-btn-hover, translateY(-1px));
+            box-shadow: var(--td-btn-shadow-hover, var(--td-btn-shadow, none));
+            filter: var(--td-btn-hover-filter, none);
+        }
+        .td-phone {
+            position: relative;
+            width: min(100%, 292px);
+            aspect-ratio: 71.9 / 150;
+            margin-inline: auto;
+            border-radius: 46px;
+            background: linear-gradient(155deg, #5c5c60 0%, #2a2a2e 16%, #1a1a1c 46%, #3a3a3e 78%, #121214 100%);
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, 0.28),
+                inset 0 0 0 3px #0c0c0e,
+                0 18px 36px rgba(15, 23, 42, 0.16);
+        }
+        .td-phone-screen {
+            position: absolute;
+            inset: 8px;
+            overflow: hidden;
+            border-radius: 38px;
+            background: #000;
+        }
+        .td-phone-screen iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: #fff;
+        }
+        .td-island {
+            position: absolute;
+            z-index: 2;
+            top: 11px;
+            left: 50%;
+            width: 72px;
+            height: 20px;
+            transform: translateX(-50%);
+            border-radius: 999px;
+            background: #000;
+            pointer-events: none;
+        }
+        .td-key {
+            position: absolute;
+            width: 3px;
+            border-radius: 2px;
+            background: linear-gradient(#8a8a8e, #2a2a2e);
+        }
+        .td-key-action { left: -3px; top: 16%; height: 22px; }
+        .td-key-vol-up { left: -3px; top: 24%; height: 42px; }
+        .td-key-vol-down { left: -3px; top: 35%; height: 42px; }
+        .td-key-power { right: -3px; top: 26%; height: 64px; }
+        .td-key-camera { right: -3px; top: 42%; height: 36px; }
+        .td-layout {
+            display: grid;
+            align-items: start;
+            gap: 2.5rem;
+        }
+        @media (min-width: 1024px) {
+            .td-layout {
+                grid-template-columns: minmax(0, 1fr) 320px;
+                gap: 3.25rem;
+            }
+            .td-copy { order: 1; }
+            .td-stage {
+                order: 2;
+                position: sticky;
+                top: 5.5rem;
+                align-self: start;
+            }
+            .td-phone {
+                width: min(292px, calc((100dvh - 14rem) * 0.479));
+            }
+        }
+    </style>
+
+
+
+            <div id="rg-nav-float-wrap" class="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-4 md:pt-4">
+    <header id="rg-nav" class="rg-header pointer-events-auto mx-auto max-w-6xl rounded-2xl font-rosegold-heading">
+        <div id="rg-nav-bar" class="flex items-center justify-between gap-2 px-3 py-2 md:px-4 md:py-2.5">
+            <a class="flex shrink-0 items-center gap-2.5 min-w-0" href="/">
+                <img src="" alt=" Logo" class="h-7 w-auto object-contain md:max-h-9">
+                <div class="hidden sm:flex flex-col min-w-0">
+                    <span class="text-xs md:text-sm font-bold tracking-tight text-rosegold-black truncate"></span>
+                    <span class="text-[10px] font-semibold text-rosegold-primary truncate">Undangan Digital</span>
+                </div>
+            </a>
+
+            <button id="rg-mobile-menu-btn" class="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl border border-white/40 bg-white/50 text-sm text-rosegold-black transition hover:bg-white/70 md:hidden" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="rg-mobile-menu">
+                <i class="fas fa-bars" id="rg-mobile-menu-icon" aria-hidden="true"></i>
+            </button>
+
+            <nav class="hidden items-center gap-0.5 md:flex">
+                <a data-rg-nav="home" class="rg-nav-link " href="/">Beranda</a>
+                <a data-rg-nav="feature" class="rg-nav-link " href="/about-us#feature">Fitur</a>
+                <a data-rg-nav="tema" class="rg-nav-link" href="/#katalog-tema">Tema</a>
+                <a data-rg-nav="pricing" class="rg-nav-link" href="/about-us#pricing">Harga</a>
+                                <a data-rg-nav="product" class="rg-nav-link " href="/product">Produk</a>
+                                                <a href="/login" class="rg-nav-link">Log In</a>
+                <a href="/register" class="rg-nav-cta ml-1 inline-flex items-center gap-2">
+                    <span>Daftar</span>
+                    <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/20">
+                        <i class="fa-solid fa-user-plus text-[0.55rem]"></i>
+                    </span>
+                </a>
+            </nav>
+        </div>
+
+        <div id="rg-mobile-menu" class="hidden max-h-[min(70dvh,28rem)] overflow-y-auto overscroll-contain border-t border-white/30 bg-white/90 backdrop-blur-xl md:hidden">
+            <div class="space-y-0.5 px-3 py-3">
+                <a href="/" data-rg-nav="home" class="rg-mobile-nav-link ">Beranda</a>
+                <a href="/about-us#feature" data-rg-nav="feature" class="rg-mobile-nav-link ">Fitur</a>
+                <a href="/#katalog-tema" data-rg-nav="tema" class="rg-mobile-nav-link">Tema</a>
+                <a href="/about-us#pricing" data-rg-nav="pricing" class="rg-mobile-nav-link">Harga</a>
+                                <a href="/product" data-rg-nav="product" class="rg-mobile-nav-link ">Produk</a>
+                                                <a href="/login" class="rg-mobile-nav-link">Log In</a>
+                <a href="/register" class="rg-mobile-nav-link rg-btn-primary mt-1 block rounded-xl px-3 py-2.5 text-center text-xs font-bold uppercase tracking-wide shadow-md">Daftar</a>
+            </div>
+        </div>
+    </header>
+</div>
+<div id="rg-nav-spacer" aria-hidden="true" style="height: 88px;"></div>
+
+<script>
+(function () {
+    var GAP = 12;
+    var nav = document.getElementById('rg-nav');
+    var spacer = document.getElementById('rg-nav-spacer');
+    var btn = document.getElementById('rg-mobile-menu-btn');
+    var menu = document.getElementById('rg-mobile-menu');
+    var icon = document.getElementById('rg-mobile-menu-icon');
+
+    function syncOffset() {
+        if (!nav) return;
+        var offset = Math.ceil(nav.getBoundingClientRect().bottom) + GAP;
+        document.documentElement.style.setProperty('--rg-nav-offset', offset + 'px');
+        if (spacer) spacer.style.height = offset + 'px';
+    }
+
+    function onScroll() {
+        if (!nav) return;
+        nav.classList.toggle('rg-nav-scrolled', window.scrollY > 12);
+    }
+
+    function normalizePath(pathname) {
+        var p = (pathname || '/').replace(/\/+$/, '');
+        return p === '' ? '/' : p;
+    }
+
+    function syncActiveNav() {
+        var path = normalizePath(window.location.pathname);
+        var hash = (window.location.hash || '').replace(/^#/, '');
+        var links = document.querySelectorAll('[data-rg-nav]');
+        var activeKey = '';
+
+        if (path.indexOf('about-us') !== -1) {
+            activeKey = hash === 'pricing' ? 'pricing' : 'feature';
+        } else if (path.indexOf('product') !== -1) {
+            activeKey = 'product';
+        } else if (path.indexOf('blog') !== -1) {
+            activeKey = 'blog';
+        } else if (path === '/') {
+            activeKey = hash === 'katalog-tema' ? 'tema' : 'home';
+        }
+
+        links.forEach(function (link) {
+            var key = link.getAttribute('data-rg-nav');
+            link.classList.toggle('is-active', key === activeKey);
+        });
+    }
+
+    function setMenuOpen(open) {
+        if (!menu || !btn) return;
+        menu.classList.toggle('hidden', !open);
+        if (nav) nav.classList.toggle('rg-nav-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (icon) {
+            icon.classList.toggle('fa-bars', !open);
+            icon.classList.toggle('fa-times', open);
+        }
+        document.body.style.overflow = open ? 'hidden' : '';
+        syncOffset();
+    }
+
+    syncOffset();
+    onScroll();
+    syncActiveNav();
+    window.addEventListener('load', syncOffset);
+    window.addEventListener('resize', syncOffset);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('hashchange', syncActiveNav);
+
+    if (typeof ResizeObserver !== 'undefined' && nav) {
+        new ResizeObserver(syncOffset).observe(nav);
+    }
+
+    if (btn && menu) {
+        btn.addEventListener('click', function () {
+            setMenuOpen(menu.classList.contains('hidden'));
+        });
+        menu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () { setMenuOpen(false); });
+        });
+    }
+})();
+</script>
+    
+    <main class="td-detail">
+        <div class="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+            <a href="/theme" class="td-back inline-flex items-center gap-2 text-sm font-semibold">
+                <i class="fas fa-arrow-left text-xs" aria-hidden="true"></i>
+                Kembali ke katalog
+            </a>
+
+            <div class="td-layout mt-6">
+                <div class="td-stage">
+                    <div class="td-phone">
+                        <span class="td-key td-key-action" aria-hidden="true"></span>
+                        <span class="td-key td-key-vol-up" aria-hidden="true"></span>
+                        <span class="td-key td-key-vol-down" aria-hidden="true"></span>
+                        <span class="td-key td-key-power" aria-hidden="true"></span>
+                        <span class="td-key td-key-camera" aria-hidden="true"></span>
+                        <div class="td-phone-screen">
+                            <iframe src="/theme/preview/secret-garden" title="Tampilan mobile Secret Garden"></iframe>
+                            <span class="td-island" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="td-copy">
+                    <p class="td-kicker text-xs font-bold uppercase tracking-wider">Detail tema</p>
+                    <h1 class="td-heading mt-2 text-2xl font-bold sm:text-3xl">Secret Garden</h1>
+
+                                            <section class="mt-8">
+                            <h2 class="td-heading text-sm font-bold">Cerita tema</h2>
+                            <p class="td-text td-story mt-2 text-sm leading-relaxed sm:text-base">Secret Garden adalah tema undangan digital yang menghadirkan suasana taman rahasia yang romantis dan intim. Desainnya menampilkan foto pasangan di tengah taman hijau yang rimbun dengan bunga menjuntai, dilengkapi tipografi script putih yang elegan dan tombol pink lembut. Nuansa cahaya alami dan latar hijau menciptakan kesan hangat, personal, dan penuh keindahan alam.</p>
+                        </section>
+                    
+                    <section class="td-stats mt-8">
+                        <div class="td-stat">
+                            <p class="td-muted text-xs font-semibold uppercase tracking-wide">Undangan</p>
+                            <p class="td-heading mt-1 text-2xl font-bold">251</p>
+                            <p class="td-muted mt-1 text-xs leading-relaxed">undangan sudah memakai tema ini</p>
+                        </div>
+                        <div class="td-stat">
+                            <p class="td-muted text-xs font-semibold uppercase tracking-wide">Tamu</p>
+                            <p class="td-heading mt-1 text-2xl font-bold">3.562</p>
+                            <p class="td-muted mt-1 text-xs leading-relaxed">tamu sudah membuka undangan bertema ini</p>
+                        </div>
+                    </section>
+
+                                            <section class="mt-8">
+                                                            <h2 class="td-heading text-sm font-bold">Warna</h2>
+                                <ul class="mt-3 flex flex-wrap gap-4">
+                                                                            <li class="flex items-center gap-2">
+                                            <span class="h-9 w-9 rounded-full border border-black/10" style="background:#774B53" title="#774B53"></span>
+                                            <span class="td-text text-xs"><strong class="td-heading block">Aksen</strong>#774B53</span>
+                                        </li>
+                                                                            <li class="flex items-center gap-2">
+                                            <span class="h-9 w-9 rounded-full border border-black/10" style="background:#9A6E76" title="#9A6E76"></span>
+                                            <span class="td-text text-xs"><strong class="td-heading block">Dasar</strong>#9A6E76</span>
+                                        </li>
+                                                                            <li class="flex items-center gap-2">
+                                            <span class="h-9 w-9 rounded-full border border-black/10" style="background:#D7A5AE" title="#D7A5AE"></span>
+                                            <span class="td-text text-xs"><strong class="td-heading block">Lembut</strong>#D7A5AE</span>
+                                        </li>
+                                                                    </ul>
+                                                                                        <p class="td-text td-story mt-4 text-sm leading-relaxed">Cocok untuk pasangan yang menginginkan undangan pernikahan dengan konsep garden romance atau outdoor intimate. Sangat sesuai bagi mempelai yang menyukai nuansa hijau alami, photo-centric invitation, atau pernikahan dengan suasana taman yang tenang. Ideal untuk pernikahan outdoor, garden wedding, atau acara yang ingin menampilkan momen pasangan secara natural dan berkesan.</p>
+                                                    </section>
+                    
+                    <div class="mt-8 flex flex-wrap items-center gap-3">
+                        <a href="/theme/preview/secret-garden" target="_blank" rel="noopener noreferrer" class="td-preview-btn">
+                            <i class="fas fa-eye text-xs" aria-hidden="true"></i>
+                            Lihat Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+            <script>
+    window.phone = "6287785998700";
+    window.domain = "satucerita.eventdigital.id";
+</script>
+
+<link rel="stylesheet" href="/landing-theme/floating-wa/floating-wpp.min.css">
+<style>
+    .floating-wpp { z-index: 9998 !important; }
+    .floating-wpp .floating-wpp-button { background-color: #25D366 !important; }
+</style>
+
+<script src="/admin-theme/plugins/jquery/jquery.min.js"></script>
+
+<script src="/landing-theme/floating-wa/floating-wpp.min.js"></script>
+
+
+<div id="mitra-script-body"><script type="text/javascript">
+$(function () {
+      $("#waButton").floatingWhatsApp({
+          phone: phone,
+          popupMessage: "Hallo, apakah ada yang bisa kami bantu?",
+          message: "Halo, Saya mau bertanya tentang paket pembuatan undangan.",
+          message2: "Halo, Saya mau bertanya tentang paket pembuatan undangan.",
+          showPopup: true,
+          showOnIE: true,
+          headerTitle: "Whatsap Chat",
+          headerColor: "#085E53",
+          backgroundColor: "#ffffff00",
+          buttonImage: `<img src="/admin-theme/dist/img/wa-icon.png" />`
+      });
+  });
+</script></div>
+
+<a id="modern-wa-btn" href="https://wa.me/6287785998700" data-m-attr="href:brand.wa_url" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp" style="position:fixed; bottom:1.25rem; right:1rem; z-index:9999; touch-action:none; user-select:none;" class="z-50 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-green-600/30 transition duration-300 hover:scale-105 hover:bg-[#20bd5a] hover:shadow-xl sm:bottom-7 sm:right-7" data-wa-bound="1">
+    <svg class="h-8 w-8" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+    </svg>
+</a>
+<script>
+(function() {
+    function fallbackBtn() {
+        var nodes = document.querySelectorAll('#modern-wa-btn');
+        for (var i = 1; i < nodes.length; i++) nodes[i].remove();
+        return nodes[0] || null;
+    }
+
+    function hideIfCustomWa() {
+        var btn = fallbackBtn();
+        if (!btn) return false;
+        // Only hide fallback when floating widget button is actually rendered
+        var customBtn = document.querySelector('.floating-wpp .floating-wpp-button');
+        if (customBtn && customBtn.offsetWidth > 0 && customBtn.offsetHeight > 0) {
+            btn.style.display = 'none';
+            return true;
+        }
+        btn.style.display = '';
+        return false;
+    }
+
+    function bindDrag(btn) {
+        if (!btn || btn.dataset.waBound) return;
+        btn.dataset.waBound = '1';
+        let offset = { x: 0, y: 0 };
+        let isDown = false;
+
+        btn.addEventListener('mousedown', function(e) {
+        isDown = true;
+        offset = {
+            x: btn.offsetLeft - e.clientX,
+            y: btn.offsetTop - e.clientY
+        };
+        btn.style.transition = "none";
+        document.body.style.userSelect = "none";
+    }, false);
+
+    document.addEventListener('mouseup', function() {
+        isDown = false;
+        btn.style.transition = "";
+        document.body.style.userSelect = "";
+    }, false);
+
+    document.addEventListener('mousemove', function(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        let newLeft = e.clientX + offset.x;
+        let newTop = e.clientY + offset.y;
+        newLeft = Math.max(0, Math.min(window.innerWidth - btn.offsetWidth, newLeft));
+        newTop = Math.max(0, Math.min(window.innerHeight - btn.offsetHeight, newTop));
+        btn.style.left = newLeft + "px";
+        btn.style.top = newTop + "px";
+        btn.style.right = "auto";
+        btn.style.bottom = "auto";
+    }, false);
+
+    btn.addEventListener('touchstart', function(e) {
+        isDown = true;
+        const touch = e.touches[0];
+        offset = {
+            x: btn.offsetLeft - touch.clientX,
+            y: btn.offsetTop - touch.clientY
+        };
+        btn.style.transition = "none";
+    }, false);
+
+    btn.addEventListener('touchend', function() {
+        isDown = false;
+        btn.style.transition = "";
+    }, false);
+
+    btn.addEventListener('touchmove', function(e) {
+        if (!isDown) return;
+        const touch = e.touches[0];
+        let newLeft = touch.clientX + offset.x;
+        let newTop = touch.clientY + offset.y;
+        newLeft = Math.max(0, Math.min(window.innerWidth - btn.offsetWidth, newLeft));
+        newTop = Math.max(0, Math.min(window.innerHeight - btn.offsetHeight, newTop));
+        btn.style.left = newLeft + "px";
+        btn.style.top = newTop + "px";
+        btn.style.right = "auto";
+        btn.style.bottom = "auto";
+    }, { passive: true });
+
+        function setInitialPosition() {
+            btn.style.left = "";
+            btn.style.top = "";
+            btn.style.right = "1rem";
+            btn.style.bottom = "1.25rem";
+        }
+        setInitialPosition();
+        window.addEventListener('resize', setInitialPosition);
+    }
+
+    function sync() {
+        var btn = fallbackBtn();
+        if (btn) bindDrag(btn);
+        hideIfCustomWa();
+    }
+
+    document.addEventListener('mitra:ready', sync);
+    sync();
+    setTimeout(sync, 700);
+})();
+</script>
+<script>
+(function () {
+    var reduceMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    var selector = [
+        '[class*=\"animate-\"]',
+        '.blob',
+        '.fade-in',
+        '.still-track',
+        '.cover-slide-img',
+        '.pc-hero__glow-orb'
+    ].join(',');
+    var nodes = [];
+    var observer = null;
+
+    function setPaused(el, paused) {
+        if (!el || !el.style) return;
+        el.style.animationPlayState = paused ? 'paused' : 'running';
+    }
+
+    function pauseByVisibility() {
+        var hidden = document.hidden || (reduceMotion && reduceMotion.matches);
+        for (var i = 0; i < nodes.length; i++) {
+            if (hidden) {
+                setPaused(nodes[i], true);
+            } else if (!observer) {
+                setPaused(nodes[i], false);
+            } else {
+                setPaused(nodes[i], nodes[i].__ajOffscreen === true);
+            }
+        }
+    }
+
+    function bindObserver() {
+        if (!('IntersectionObserver' in window)) return;
+        observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                entry.target.__ajOffscreen = !entry.isIntersecting;
+                setPaused(entry.target, document.hidden || entry.target.__ajOffscreen || (reduceMotion && reduceMotion.matches));
+            });
+        }, { threshold: 0.05 });
+        for (var i = 0; i < nodes.length; i++) observer.observe(nodes[i]);
+    }
+
+    function refreshMotionNodes() {
+        if (observer) observer.disconnect();
+        observer = null;
+        nodes = Array.prototype.slice.call(document.querySelectorAll(selector));
+        if (!nodes.length) return;
+        if (!(reduceMotion && reduceMotion.matches)) bindObserver();
+        pauseByVisibility();
+    }
+
+    document.addEventListener('visibilitychange', pauseByVisibility);
+    document.addEventListener('mitra:ready', refreshMotionNodes);
+    if (reduceMotion && typeof reduceMotion.addEventListener === 'function') {
+        reduceMotion.addEventListener('change', refreshMotionNodes);
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', refreshMotionNodes, { once: true });
+    } else {
+        refreshMotionNodes();
+    }
+})();
+</script>
+
+<footer class="rg-footer text-white pt-8 pb-5 md:pt-10 md:pb-6">
+    <div class="max-w-6xl mx-auto px-3 md:px-4">
+        <div class="grid gap-6 md:gap-10 md:grid-cols-2 lg:grid-cols-4 items-start">
+            <div class="md:col-span-2">
+                <h2 class="text-base font-bold leading-snug md:text-2xl lg:text-3xl">
+                    <span data-m="preferences.footer_header">Satucerita</span>
+                </h2>
+                <div class="mt-2 mb-2 text-xs leading-relaxed text-slate-100 md:mt-3 md:text-sm lg:text-base">
+                    <p><span data-m-html="preferences.footer_subheader">Bersama Satu Cerita, membuat undangan digital jadi lebih mudah.
+Pilih desain favoritmu, sesuaikan dengan kebutuhanmu, lalu bagikan website undangan yang elegan hanya dengan satu tautan.</span></p>
+                </div>
+                <ul class="space-y-1.5 text-xs md:space-y-2 md:text-sm lg:text-base">
+                    <li class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-telephone shrink-0 md:h-4 md:w-4" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
+                        </svg>
+                        <a class="hover:underline break-all" href="https://wa.me/6287785998700" data-m-attr="href:brand.wa_url">
+                            +<span data-m="brand.phone">6287785998700</span>
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-envelope shrink-0 md:h-4 md:w-4" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"></path>
+                        </svg>
+                        <a class="hover:underline break-all" href="mailto:adindaristiani32@gmail.com" data-m-attr="href:brand.mailto">
+                            <span data-m="brand.email">adindaristiani32@gmail.com</span>
+                        </a>
+                    </li>
+                                    </ul>
+            </div>
+
+            <div>
+                <h5 class="text-xs font-semibold tracking-wide mb-2 md:text-sm md:mb-3">Links</h5>
+                <ul class="space-y-1.5 text-xs md:space-y-2 md:text-sm">
+                    <li>
+                        <a class="hover:underline" href="/about-us#feature">Paket</a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="/#katalog-tema">Produk</a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="/about-us#pricing"><span data-m="preferences.menu_5">Harga</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-xs font-semibold tracking-wide mb-2 md:text-sm md:mb-3">Support</h5>
+                <ul class="space-y-1.5 text-xs md:space-y-2 md:text-sm">
+                    <li>
+                        <a class="hover:underline" href="/faq"><span data-m="preferences.menu_10">FAQ</span></a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="/privacy-policy"><span data-m="preferences.menu_11">Kebijakan Privasi</span></a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="/term-condition"><span data-m="preferences.menu_12">Syarat &amp; Ketentuan</span></a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="https://api.whatsapp.com/send?phone=6287785998700" data-m-attr="href:brand.wa_send_url" target="_blank"><span data-m="preferences.menu_13">Hubungi Kami</span></a>
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="#" data-m-attr="href:brand.ig_url" target="_blank">
+                            <span data-m="preferences.menu_14">Ikuti Kami</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4453a1a1a5594232bd3fab47b67ab4f7&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body>
+
+
+
+
+<body data-aos-easing="ease-out" data-aos-duration="600" data-aos-delay="0" class="invitation-loaded" style="">
+  
+  
+  <div id="app"><!----> <!----> <section><section class="min-h-screen flex mx-auto relative"><div class="hidden md:w-2/3 md:relative md:flex bg-cover bg-center max-h-screen"><div class="w-full h-full absolute top-0 left-0"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/4.jpg" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="100" class="w-full h-full object-cover object-center aos-init aos-animate"></div> <div class="w-full h-full absolute top-0 left-0 bg-black bg-opacity-50"></div> <div class="content-end items-end w-full mb-52 ml-20 z-10"><p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" class="text-4xl font-vidaloka text-white font-normal mb-5 aos-init aos-animate">Undangan Pernikahan</p> <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" class="text-7xl tracking-tighter font-vidaloka text-white mb-5 font-medium aos-init aos-animate" style="font-family: &quot;Imperial Script&quot;, cursive;">Naufal &amp; Kaila</h1> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="text-4xl font-vidaloka text-white mt-5 aos-init aos-animate">
+                Minggu, 27 September 2028
+              </p></div></div> <div class="w-full md:w-1/3 relative h-screen overflow-y-auto overflow-x-hidden flex flex-wrap" style="background-color: rgb(230, 222, 216);"><section class="w-full h-full relative"><div id="bg-video-slot" class="w-full h-full absolute top-0 left-0"><video id="bg-video-main" class="w-full h-screen object-cover" muted="" playsinline="" preload="auto">
+    <source src="/themes/secret-garden/assets/video.mp4" type="video/mp4">
+  </video></div> <div class="flex flex-wrap relative h-full transition-opacity duration-1000 opacity-100"><div class="content-center items-center mx-auto w-full text-center"><p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" class="font-vidaloka text-xs sm:text-sm md:text-lg lg:text-xl text-black uppercase mb-5 md:mb-10 animate-zoom-in aos-init aos-animate">Undangan Pernikahan</p> <div class="flex flex-col gap-y-2 items-center justify-center"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" class="font-medium text-4xl sm:text-6xl md:text-3xl lg:text-5xl font-vidaloka capitalize animate-zoom-in aos-init aos-animate" style="font-family: &quot;Imperial Script&quot;, cursive; color: rgb(154, 110, 118);">
+                      Naufal
+                    </h1> <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" class="font-medium text-3xl sm:text-5xl md:text-2xl lg:text-4xl font-vidaloka text-black capitalize animate-zoom-in my-1 aos-init aos-animate" style="font-family: &quot;Imperial Script&quot;, cursive;"> &amp; </h1> <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600" class="font-medium text-4xl sm:text-6xl md:text-3xl lg:text-5xl font-vidaloka capitalize animate-zoom-in aos-init aos-animate" style="font-family: &quot;Imperial Script&quot;, cursive; color: rgb(154, 110, 118);">
+                      Kaila
+                    </h1></div> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="font-medium text-xs sm:text-sm md:text-base font-vidaloka text-black uppercase tracking-widest animate-zoom-in animation-delay-18 mt-5 aos-init aos-animate">
+                    27 . 09 . 2028
+                  </p></div></div></section> <section class="relative w-full z-30 pointer-events-none border-t-4 border-b-4" style="border-color: rgb(154, 110, 118); background-color: rgb(230, 222, 216);"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/border.webp" class="w-full h-auto object-cover object-top block"></section> <section id="section-quotes" class="w-full pb-8 relative overflow-hidden"><div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-50" style="background-image: url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/mempelai.webp&quot;);"></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bukit.webp" class="w-full h-auto object-cover object-bottom opacity-50"></div> <div class="text-center mx-5 relative z-30 mt-6"><p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="font-vidaloka capitalize text-center text-xl md:text-2xl mb-4 aos-init aos-animate" style="font-family: &quot;Imperial Script&quot;, cursive; color: rgb(154, 110, 118);">Selamat Datang</p> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="text-xs md:text-sm lg:text-base font-light font-poppins text-black text-center my-4 aos-init aos-animate">Tanpa mengurangi rasa hormat, kami memberikan kabar bahagia ini dan memohon restu dari rekan sekalian untuk senantiasa mendoakan kelancaran acara pernikahan kami.</p></div> <div class="mt-6 mb-8 mx-auto relative z-30 px-4 flex justify-center"><div class="swiper mySwiper rounded-[200px] overflow-hidden border-[5px] border-[#D9D0C7] shadow-xl w-[273px] h-[403.7px] swiper-initialized swiper-vertical swiper-backface-hidden"><div class="swiper-wrapper" id="swiper-wrapper-50fc44fea9e1433d" aria-live="off" style="transition-duration: 0ms; transform: translate3d(0px, -788px, 0px); transition-delay: 0ms;"><div class="swiper-slide" style="height: 394px;" role="group" aria-label="1 / 5" data-swiper-slide-index="0"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/4.jpg" class="w-full h-full object-cover object-center"></div><div class="swiper-slide swiper-slide-prev" style="height: 394px;" role="group" aria-label="2 / 5" data-swiper-slide-index="1"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/5.jpg" class="w-full h-full object-cover object-center"></div><div class="swiper-slide swiper-slide-active" style="height: 394px;" role="group" aria-label="3 / 5" data-swiper-slide-index="2"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/6.jpg" class="w-full h-full object-cover object-center"></div><div class="swiper-slide swiper-slide-next" style="height: 394px;" role="group" aria-label="4 / 5" data-swiper-slide-index="3"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/7.jpg" class="w-full h-full object-cover object-center"></div><div class="swiper-slide" role="group" aria-label="5 / 5" data-swiper-slide-index="4" style="height: 394px;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/8.jpg" class="w-full h-full object-cover object-center"></div></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div></div> <div class="absolute -left-16 z-5" style="top: 42%;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-2.webp" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100" class="max-w-1/2 animate-bunga-kiri aos-init"></div> <div class="absolute -left-16 z-10" style="top: 42%;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-1.webp" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100" class="max-w-1/2 animate-bunga-kiri aos-init"></div> <div class="absolute -right-16 -scale-x-100 z-5" style="top: 24%;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-2.webp" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100" class="max-w-1/2 animate-bunga-kanan aos-init"></div> <div class="absolute -right-16 -scale-x-100 z-10" style="top: 24%;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-1.webp" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100" class="max-w-1/2 animate-bunga-kanan aos-init"></div> <div class="text-center mx-5 relative z-20"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" class="mb-5 font-vidaloka capitalize text-center text-4xl sm:text-5xl md:text-5xl lg:text-6xl aos-init" style="font-family: &quot;Imperial Script&quot;, cursive; color: rgb(154, 110, 118);">Quotes</h1> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="text-xs md:text-base font-extralight font-poppins text-black my-8 aos-init">Every love story is beautiful, but ours is the best one. I loved her since the first time I saw her. My mother told me to pick the very best one, and I did. True love stories never have endings.</p> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="text-xs md:text-base font-bold font-poppins text-black mt-4 aos-init">#LeonFionaDay</p></div></section> <section class="relative w-full overflow-hidden" style="background-color: rgb(230, 222, 216);"><div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-50 mempelai-bg-section" style="background-image: url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/mempelai.webp&quot;);"></div> <div class="relative z-30 pb-12 md:pb-16"><div class="min-h-full p-5 md:p-8 flex items-center justify-center"><div class="rounded-4xl py-10 md:py-8 px-2.5 lg:px-5 w-full max-w-4xl"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" class="mb-5 capitalize text-center aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: italic; font-size: 35px; line-height: 35px; letter-spacing: 0.5px; color: rgb(154, 110, 118); vertical-align: middle;">Mempelai</h1> <div class="flex flex-col"><div class="text-center"><div data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="300" class="relative max-w-full mx-auto mt-4 flex justify-center items-center aos-init" style="min-height: 380px;"><div class="absolute -left-16 z-5" style="top: 0%;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-2.webp" class="max-w-1/2 animate-bunga-kiri"></div> <div class="absolute -left-16 z-10" style="top: 0%;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-1.webp" class="max-w-1/2 animate-bunga-kiri"></div> <div class="border-mempelai relative z-20 p-1.5 flex items-center justify-center" style="width: 272px; height: 374.8px; border-radius: 200px; border-width: 2px; border-style: solid;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/2.jpg" alt="bride" class="w-full h-full object-cover object-center" style="border-radius: 194px;"></div> <img src="/themes/secret-garden/assets/star.webp" alt="star ornament" class="absolute z-30 pointer-events-none" style="width: 285.2px; height: 181.59px; transform: rotate(7deg); opacity: 1; top: 255px; left: 50px;"></div> <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" class="text-4xl md:text-5xl lg:text-5xl mt-4 capitalize text-center font-imperial-script aos-init" style="color: rgb(119, 75, 83); font-family: &quot;Imperial Script&quot;, cursive;">Naufal</h1> <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" class="capitalize my-4 text-center aos-init" style="font-family: Lora, serif; font-weight: 700; font-style: normal; font-size: 18px; line-height: 32.4px; letter-spacing: 0.5px; vertical-align: middle; color: rgb(0, 0, 0);">Naufal Arkan</h1> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" class="my-4 text-center aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; vertical-align: middle; color: rgb(0, 0, 0);">Anak Pertama Dari Bapak Roni dan Ibu Ridha</p> <!----></div> <div class="text-center"><div data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="200" class="relative max-w-full mx-auto mt-4 flex justify-center items-center aos-init" style="min-height: 380px;"><div class="absolute -right-16 -scale-x-100 z-5" style="top: 0%;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-2.webp" class="max-w-1/2 animate-bunga-kanan"></div> <div class="absolute -right-16 -scale-x-100 z-10" style="top: 0%;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-1.webp" class="max-w-1/2 animate-bunga-kanan"></div> <div class="border-mempelai relative z-20 p-1.5 flex items-center justify-center" style="width: 272px; height: 374.8px; border-radius: 200px; border-width: 2px; border-style: solid;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/3.jpg" alt="groom" class="w-full h-full object-cover object-center" style="border-radius: 194px;"></div> <img src="/themes/secret-garden/assets/star.webp" alt="star ornament" class="absolute z-30 pointer-events-none" style="width: 285.2px; height: 181.59px; transform: rotate(7deg); opacity: 1; top: 255px; left: 50px;"></div> <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" class="text-4xl md:text-5xl lg:text-5xl mt-4 capitalize text-center font-imperial-script aos-init" style="color: rgb(119, 75, 83); font-family: &quot;Imperial Script&quot;, cursive;">Kaila</h1> <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" class="capitalize my-4 text-center aos-init" style="font-family: Lora, serif; font-weight: 700; font-style: normal; font-size: 18px; line-height: 32.4px; letter-spacing: 0.5px; vertical-align: middle; color: rgb(0, 0, 0);">Kaila Adriana</h1> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" class="my-4 text-center aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; vertical-align: middle; color: rgb(0, 0, 0);">Anak Ketiga Dari Bapak Hendra dan Ibu Yaselin</p> <!----></div></div></div></div></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bukit.webp" class="w-full h-auto object-cover object-bottom opacity-50"></div></section> <section class="relative w-full" style="background-color: rgb(154, 110, 118);"><div><div class="min-h-full p-5 md:p-8 pb-32 md:pb-40 flex items-center justify-center relative z-20"><div class="py-10 md:py-8 px-2.5 lg:px-5 w-full max-w-4xl"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" class="text-white capitalize mb-5 aos-init" style="font-family: &quot;Imperial Script&quot;, cursive; font-weight: 400; font-style: normal; font-size: 55px; line-height: 55px; letter-spacing: 0.5px; text-align: center; vertical-align: middle;">Cerita Kami</h1> <div class="flex flex-col items-center gap-y-6"><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" class="w-full max-w-[390px] p-5 text-center flex flex-col items-center shadow-lg aos-init" style="background: rgb(230, 222, 216); border-radius: 32px; border: 1px solid rgba(0, 0, 0, 0.05); overflow: hidden;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/1.jpg" class="w-full object-cover object-center mb-6" style="height: 220px; border-radius: 24px;"> <h1 class="mb-3" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Pertemuan Pertama</h1> <p class="mb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 20px; letter-spacing: 0.5px;">Tahun 2016</p> <p class="px-2 pb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Kami pertama kali bertemu di bangku kuliah pada tahun 2016. Dari pertemanan sederhana, kami mulai saling mengenal lebih dekat dan merasa nyaman satu sama lain.</p></div><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="w-full max-w-[390px] p-5 text-center flex flex-col items-center shadow-lg aos-init" style="background: rgb(230, 222, 216); border-radius: 32px; border: 1px solid rgba(0, 0, 0, 0.05); overflow: hidden;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/2.jpg" class="w-full object-cover object-center mb-6" style="height: 220px; border-radius: 24px;"> <h1 class="mb-3" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Mulai Menjalin Hubungan</h1> <p class="mb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 20px; letter-spacing: 0.5px;">Tahun 2017</p> <p class="px-2 pb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Seiring berjalannya waktu, kebersamaan kami tumbuh menjadi komitmen. Tahun ini menjadi awal perjalanan kami sebagai pasangan.</p></div><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="w-full max-w-[390px] p-5 text-center flex flex-col items-center shadow-lg aos-init" style="background: rgb(230, 222, 216); border-radius: 32px; border: 1px solid rgba(0, 0, 0, 0.05); overflow: hidden;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/3.jpg" class="w-full object-cover object-center mb-6" style="height: 220px; border-radius: 24px;"> <h1 class="mb-3" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Menguatkan Komitmen</h1> <p class="mb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 20px; letter-spacing: 0.5px;">Tahun 2018</p> <p class="px-2 pb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Kami belajar saling memahami, bertumbuh bersama, dan menguatkan keyakinan untuk melangkah ke jenjang yang lebih serius.</p></div><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="w-full max-w-[390px] p-5 text-center flex flex-col items-center shadow-lg aos-init" style="background: rgb(230, 222, 216); border-radius: 32px; border: 1px solid rgba(0, 0, 0, 0.05); overflow: hidden;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/4.jpg" class="w-full object-cover object-center mb-6" style="height: 220px; border-radius: 24px;"> <h1 class="mb-3" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Restu Keluarga</h1> <p class="mb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 20px; letter-spacing: 0.5px;">Tahun 2019</p> <p class="px-2 pb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Hubungan kami semakin mantap dengan dukungan dan doa dari kedua keluarga besar yang selalu mengiringi langkah kami.</p></div><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" class="w-full max-w-[390px] p-5 text-center flex flex-col items-center shadow-lg aos-init" style="background: rgb(230, 222, 216); border-radius: 32px; border: 1px solid rgba(0, 0, 0, 0.05); overflow: hidden;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/5.jpg" class="w-full object-cover object-center mb-6" style="height: 220px; border-radius: 24px;"> <h1 class="mb-3" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Lamaran</h1> <p class="mb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 20px; letter-spacing: 0.5px;">Oktober 2020</p> <p class="px-2 pb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Dengan niat baik, kami melangsungkan acara lamaran sebagai tanda keseriusan untuk melanjutkan hubungan ke jenjang pernikahan.</p></div><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" class="w-full max-w-[390px] p-5 text-center flex flex-col items-center shadow-lg aos-init" style="background: rgb(230, 222, 216); border-radius: 32px; border: 1px solid rgba(0, 0, 0, 0.05); overflow: hidden;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/6.jpg" class="w-full object-cover object-center mb-6" style="height: 220px; border-radius: 24px;"> <h1 class="mb-3" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Persiapan Hari Bahagia</h1> <p class="mb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 20px; letter-spacing: 0.5px;">Juni 2020</p> <p class="px-2 pb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Kami mulai mempersiapkan hari pernikahan dengan penuh suka cita, dari hal kecil hingga detail terbaik yang ingin kami bagikan bersama orang-orang tercinta.</p></div><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700" class="w-full max-w-[390px] p-5 text-center flex flex-col items-center shadow-lg aos-init" style="background: rgb(230, 222, 216); border-radius: 32px; border: 1px solid rgba(0, 0, 0, 0.05); overflow: hidden;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/7.jpg" class="w-full object-cover object-center mb-6" style="height: 220px; border-radius: 24px;"> <h1 class="mb-3" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Menetapkan Tanggal</h1> <p class="mb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 20px; letter-spacing: 0.5px;">Desember 2020</p> <p class="px-2 pb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Setelah berdiskusi bersama keluarga, kami akhirnya menetapkan tanggal pernikahan yang kami nantikan bersama.</p></div><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800" class="w-full max-w-[390px] p-5 text-center flex flex-col items-center shadow-lg aos-init" style="background: rgb(230, 222, 216); border-radius: 32px; border: 1px solid rgba(0, 0, 0, 0.05); overflow: hidden;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/8.jpg" class="w-full object-cover object-center mb-6" style="height: 220px; border-radius: 24px;"> <h1 class="mb-3" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Persiapan Semakin Matang</h1> <p class="mb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 20px; letter-spacing: 0.5px;">Tahun 2021</p> <p class="px-2 pb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Setiap proses kami jalani dengan penuh syukur, sambil terus memantapkan hati untuk menyambut hari istimewa.</p></div><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="900" class="w-full max-w-[390px] p-5 text-center flex flex-col items-center shadow-lg aos-init" style="background: rgb(230, 222, 216); border-radius: 32px; border: 1px solid rgba(0, 0, 0, 0.05); overflow: hidden;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/9.jpg" class="w-full object-cover object-center mb-6" style="height: 220px; border-radius: 24px;"> <h1 class="mb-3" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Menuju Hari Pernikahan</h1> <p class="mb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 20px; letter-spacing: 0.5px;">Tahun 2022</p> <p class="px-2 pb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Doa dan dukungan dari keluarga serta sahabat membuat kami semakin siap melangkah ke ikatan suci pernikahan.</p></div><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000" class="w-full max-w-[390px] p-5 text-center flex flex-col items-center shadow-lg aos-init" style="background: rgb(230, 222, 216); border-radius: 32px; border: 1px solid rgba(0, 0, 0, 0.05); overflow: hidden;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/1.jpg" class="w-full object-cover object-center mb-6" style="height: 220px; border-radius: 24px;"> <h1 class="mb-3" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 28px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Hari Bahagia Kami</h1> <p class="mb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 20px; letter-spacing: 0.5px;">Tahun 2023</p> <p class="px-2 pb-2" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">InsyaAllah kami akan melangsungkan akad dan resepsi pernikahan. Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu.</p></div></div></div></div></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none overflow-hidden leading-none"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/story-flower.webp" alt="Story Flower Ornament" class="w-full h-auto block scale-125 origin-bottom"></div></section> <section id="section-countdown" class="w-full relative overflow-hidden flex flex-col items-center justify-end pb-5" style="height: 620px; background-color: rgb(230, 222, 216);"><div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/arch.webp&quot;); transform: scale(1.22);"></div> <div class="relative z-10 flex flex-col items-center justify-end w-full max-w-[170px] mx-auto px-1 text-center"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" class="mb-3 capitalize max-w-[170px] mx-auto leading-tight aos-init" style="font-family: &quot;Imperial Script&quot;, cursive; font-weight: 400; font-style: normal; font-size: 28px; line-height: 28px; letter-spacing: 0px; text-align: center; color: rgb(154, 110, 118); word-break: break-word;">Counting down to forever</h1> <div class="w-[150px] mx-auto my-2 flex flex-col gap-y-3"><div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="grid grid-cols-2 gap-x-3 w-full aos-init"><div class="flex flex-col items-center"><span class="text-xl md:text-2xl font-serif text-[#2B2B2B] leading-none">679</span> <span class="text-[10px] font-serif text-[#555555] mt-1 capitalize">Hari</span></div> <div class="flex flex-col items-center"><span class="text-xl md:text-2xl font-serif text-[#2B2B2B] leading-none">06</span> <span class="text-[10px] font-serif text-[#555555] mt-1 capitalize">Jam</span></div></div> <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="grid grid-cols-2 gap-x-3 w-full aos-init"><div class="flex flex-col items-center"><span class="text-xl md:text-2xl font-serif text-[#2B2B2B] leading-none">37</span> <span class="text-[10px] font-serif text-[#555555] mt-1 capitalize">Menit</span></div> <div class="flex flex-col items-center"><span class="text-xl md:text-2xl font-serif text-[#2B2B2B] leading-none">13</span> <span class="text-[10px] font-serif text-[#555555] mt-1 capitalize">Detik</span></div></div></div> <button data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="mt-4 px-4 py-2 rounded-full text-white text-[10px] font-medium tracking-wider uppercase shadow-md hover:opacity-90 active:scale-95 transition-all inline-flex items-center gap-1.5 whitespace-nowrap aos-init" style="background: linear-gradient(241.84deg, rgb(215, 165, 174) 0%, rgb(119, 75, 83) 100%);"><i class="far fa-calendar-alt text-[10px]"></i> <span>Tambahkan ke Kalender</span></button></div></section> <section class="relative w-full z-30 pointer-events-none border-t-4 border-b-4" style="border-color: rgb(154, 110, 118); background-color: rgb(230, 222, 216);"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/border.webp" class="w-full h-auto object-cover object-top block"></section> <div id="section-schedule" class="w-full"><section class="relative w-full min-h-screen py-16 px-6 flex flex-col justify-center items-center overflow-hidden text-center" style="background-color: rgb(230, 222, 216);"><div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-50 mempelai-bg-section" style="background-image: url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/mempelai.webp&quot;);"></div> <div class="absolute top-0 left-0 w-full z-10 pointer-events-none"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/top.webp" alt="Top Ornament" class="w-full h-[25vh] sm:h-[30vh] object-cover object-top"></div> <div class="relative z-20 w-full max-w-md mx-auto my-auto flex flex-col items-center pt-24 pb-12 px-4"><h2 data-aos="zoom-in" data-aos-duration="1000" class="uppercase text-center mb-3 aos-init" style="font-family: Lora, serif; font-size: 26px; line-height: 36px; letter-spacing: 1.5px; color: rgb(154, 110, 118); font-weight: 400;">Akad</h2> <div class="w-48 sm:w-56 mx-auto mt-2 mb-6" style="border-top: 0.8px solid rgb(47, 47, 47);"></div> <div data-aos="fade-up" data-aos-duration="1000" class="flex flex-col items-center text-center my-2 aos-init"><span class="uppercase mb-2 text-center" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 27px; letter-spacing: 0.5px; vertical-align: middle; color: rgb(0, 0, 0);">
+                      SENIN
+                    </span> <span class="my-1 text-center" style="font-family: Lora, serif; font-weight: 600; font-style: normal; font-size: 50px; line-height: 50px; letter-spacing: 0px; vertical-align: middle; color: rgb(154, 110, 118);">
+                      28
+                    </span> <span class="uppercase mt-2 mb-4 text-center" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 27px; letter-spacing: 0.5px; vertical-align: middle; color: rgb(0, 0, 0);">
+                      MARET 2028
+                    </span></div> <div data-aos="fade-up" data-aos-duration="1000" class="my-3 text-center aos-init"><span style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 27px; letter-spacing: 1px; text-align: center; vertical-align: middle; color: rgb(0, 0, 0);">13:00 - 17:00 WIB</span></div> <div data-aos="fade-up" data-aos-duration="1000" class="flex items-center justify-center gap-x-3 my-6 aos-init"><div class="w-8 sm:w-10" style="border-top: 0.8px solid rgb(54, 54, 54);"></div> <i class="fas fa-building text-[#363636] text-base"></i> <div class="w-8 sm:w-10" style="border-top: 0.8px solid rgb(54, 54, 54);"></div></div> <div data-aos="fade-up" data-aos-duration="1000" class="schedule-lokasi text-center max-w-xs mx-auto mb-6 aos-init">Gedung Muhammadiyah Mataram</div> <div data-aos="zoom-in-up" data-aos-duration="1000" class="w-full flex justify-center mt-2 mb-4 aos-init"><div class="map-embed"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB8yt5w4P6NitG8K6xSb_IJ5y2AKUwpDWA%0A%20%20%20%20&amp;q=-6.1196465053716,106.84980869293&amp;language=id"></iframe></div></div> <!----></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/twin-flower.webp" alt="Twin Flower" class="w-full h-[25vh] sm:h-[30vh] object-cover object-bottom"></div></section><section class="relative w-full min-h-screen py-16 px-6 flex flex-col justify-center items-center overflow-hidden text-center" style="background-color: rgb(230, 222, 216);"><div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-50 mempelai-bg-section" style="background-image: url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/mempelai.webp&quot;);"></div> <div class="absolute top-0 left-0 w-full z-10 pointer-events-none"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/top.webp" alt="Top Ornament" class="w-full h-[25vh] sm:h-[30vh] object-cover object-top"></div> <div class="relative z-20 w-full max-w-md mx-auto my-auto flex flex-col items-center pt-24 pb-12 px-4"><h2 data-aos="zoom-in" data-aos-duration="1000" class="uppercase text-center mb-3 aos-init" style="font-family: Lora, serif; font-size: 26px; line-height: 36px; letter-spacing: 1.5px; color: rgb(154, 110, 118); font-weight: 400;">Resepsi Pernikahan 1</h2> <div class="w-48 sm:w-56 mx-auto mt-2 mb-6" style="border-top: 0.8px solid rgb(47, 47, 47);"></div> <div data-aos="fade-up" data-aos-duration="1000" class="flex flex-col items-center text-center my-2 aos-init"><span class="uppercase mb-2 text-center" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 27px; letter-spacing: 0.5px; vertical-align: middle; color: rgb(0, 0, 0);">
+                      SELASA
+                    </span> <span class="my-1 text-center" style="font-family: Lora, serif; font-weight: 600; font-style: normal; font-size: 50px; line-height: 50px; letter-spacing: 0px; vertical-align: middle; color: rgb(154, 110, 118);">
+                      29
+                    </span> <span class="uppercase mt-2 mb-4 text-center" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 27px; letter-spacing: 0.5px; vertical-align: middle; color: rgb(0, 0, 0);">
+                      MARET 2028
+                    </span></div> <div data-aos="fade-up" data-aos-duration="1000" class="my-3 text-center aos-init"><span style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 27px; letter-spacing: 1px; text-align: center; vertical-align: middle; color: rgb(0, 0, 0);">13:00 - 17:00 WIB</span></div> <div data-aos="fade-up" data-aos-duration="1000" class="flex items-center justify-center gap-x-3 my-6 aos-init"><div class="w-8 sm:w-10" style="border-top: 0.8px solid rgb(54, 54, 54);"></div> <i class="fas fa-building text-[#363636] text-base"></i> <div class="w-8 sm:w-10" style="border-top: 0.8px solid rgb(54, 54, 54);"></div></div> <div data-aos="fade-up" data-aos-duration="1000" class="schedule-lokasi text-center max-w-xs mx-auto mb-6 aos-init">Gedung Muhammadiyah Mataram</div> <!----> <!----></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/twin-flower.webp" alt="Twin Flower" class="w-full h-[25vh] sm:h-[30vh] object-cover object-bottom"></div></section><section class="relative w-full min-h-screen py-16 px-6 flex flex-col justify-center items-center overflow-hidden text-center" style="background-color: rgb(230, 222, 216);"><div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-50 mempelai-bg-section" style="background-image: url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/mempelai.webp&quot;);"></div> <div class="absolute top-0 left-0 w-full z-10 pointer-events-none"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/top.webp" alt="Top Ornament" class="w-full h-[25vh] sm:h-[30vh] object-cover object-top"></div> <div class="relative z-20 w-full max-w-md mx-auto my-auto flex flex-col items-center pt-24 pb-12 px-4"><h2 data-aos="zoom-in" data-aos-duration="1000" class="uppercase text-center mb-3 aos-init" style="font-family: Lora, serif; font-size: 26px; line-height: 36px; letter-spacing: 1.5px; color: rgb(154, 110, 118); font-weight: 400;">Resepsi Pernikahan 2</h2> <div class="w-48 sm:w-56 mx-auto mt-2 mb-6" style="border-top: 0.8px solid rgb(47, 47, 47);"></div> <div data-aos="fade-up" data-aos-duration="1000" class="flex flex-col items-center text-center my-2 aos-init"><span class="uppercase mb-2 text-center" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 27px; letter-spacing: 0.5px; vertical-align: middle; color: rgb(0, 0, 0);">
+                      RABU
+                    </span> <span class="my-1 text-center" style="font-family: Lora, serif; font-weight: 600; font-style: normal; font-size: 50px; line-height: 50px; letter-spacing: 0px; vertical-align: middle; color: rgb(154, 110, 118);">
+                      30
+                    </span> <span class="uppercase mt-2 mb-4 text-center" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 27px; letter-spacing: 0.5px; vertical-align: middle; color: rgb(0, 0, 0);">
+                      MARET 2028
+                    </span></div> <div data-aos="fade-up" data-aos-duration="1000" class="my-3 text-center aos-init"><span style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 18px; line-height: 27px; letter-spacing: 1px; text-align: center; vertical-align: middle; color: rgb(0, 0, 0);">13:00 - 17:00 WIB</span></div> <div data-aos="fade-up" data-aos-duration="1000" class="flex items-center justify-center gap-x-3 my-6 aos-init"><div class="w-8 sm:w-10" style="border-top: 0.8px solid rgb(54, 54, 54);"></div> <i class="fas fa-building text-[#363636] text-base"></i> <div class="w-8 sm:w-10" style="border-top: 0.8px solid rgb(54, 54, 54);"></div></div> <div data-aos="fade-up" data-aos-duration="1000" class="schedule-lokasi text-center max-w-xs mx-auto mb-6 aos-init">Gedung Muhammadiyah Mataram</div> <div data-aos="zoom-in-up" data-aos-duration="1000" class="w-full flex justify-center mt-2 mb-4 aos-init"><div class="map-embed"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB8yt5w4P6NitG8K6xSb_IJ5y2AKUwpDWA%0A%20%20%20%20&amp;q=-6.1701257,106.821972&amp;language=id"></iframe></div></div> <!----></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/twin-flower.webp" alt="Twin Flower" class="w-full h-[25vh] sm:h-[30vh] object-cover object-bottom"></div></section></div> <section id="section-dresscode" class="w-full min-h-[92vh] pt-20 pb-44 px-5 relative overflow-hidden flex flex-col justify-start items-center" style="background: rgb(154, 110, 118);"><div class="text-center mx-auto max-w-xl relative z-20 my-auto pb-14"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" class="uppercase text-center mb-4 aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 28px; line-height: 42px; letter-spacing: 0px; text-align: center; vertical-align: middle; color: rgb(255, 255, 255);">Dresscode</h1> <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250" class="my-4 flex justify-center aos-init"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/dresscode.webp" alt="Dresscode Illustration" class="w-28 sm:w-32 h-auto object-contain mx-auto" style="max-width: 120px;"></div> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="max-w-xs sm:max-w-sm mx-auto my-4 text-center aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(255, 255, 255);">Mohon mengenakan pakaian yang senada dengan palet warna kami.</p> <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mt-5 mb-2"><div title="#F5E6CA" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full shadow-md border border-white/20 flex-shrink-0" style="background-color: rgb(245, 230, 202);"></div><div title="#8C6A5D" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full shadow-md border border-white/20 flex-shrink-0" style="background-color: rgb(140, 106, 93);"></div><div title="#4A3C31" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full shadow-md border border-white/20 flex-shrink-0" style="background-color: rgb(74, 60, 49);"></div><div title="#D9A566" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full shadow-md border border-white/20 flex-shrink-0" style="background-color: rgb(217, 165, 102);"></div></div></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none flex justify-center items-end" style="height: 180px;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bebek.webp" alt="Bebek" class="absolute bottom-2 z-10" style="width: 180px; max-width: 48vw; height: auto; left: 50%; transform: translateX(-50%);"> <img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/twin-flower.webp" alt="Twin Flower" class="w-full h-[180px] object-cover object-bottom relative z-20"></div></section> <section id="section-guest" class="relative w-full mempelai-bg-section overflow-hidden" style="background-image: linear-gradient(rgba(230, 222, 216, 0.87) 60%, rgba(230, 222, 216, 0.61) 100%), url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/mempelai.webp&quot;); background-position: center center; background-repeat: no-repeat; background-size: cover; opacity: 1;"><div class="absolute pointer-events-none z-10 animate-wind-left" style="width: 280px; max-width: 75vw; height: auto; top: -60px; left: -170px; opacity: 1;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-2.webp" alt="Bunga Ornament Left Top" class="w-full h-auto object-contain"></div> <div class="absolute pointer-events-none z-10 animate-wind-right" style="width: 280px; max-width: 75vw; height: auto; top: 45%; right: -170px; opacity: 1;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-2.webp" alt="Bunga Ornament Right Middle" class="w-full h-auto object-contain"></div> <div class="min-h-full pt-12 pb-44 md:pb-52 px-5 md:px-8 flex flex-col items-center justify-center gap-y-8 relative z-20"><div class="py-6 px-2.5 lg:px-5 w-full max-w-4xl flex flex-col justify-center items-center"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" class="uppercase text-center mb-5 aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 25px; line-height: 45px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Informasi Tambahan</h1> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="max-w-md mx-auto text-center aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(54, 54, 54);">Tamu yang hadir diharapkan memakai masker dan tidak membawa bayi</p></div> <div class="py-6 px-2.5 lg:px-5 w-full max-w-4xl flex flex-col justify-center items-center"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" class="uppercase text-center mb-5 aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 25px; line-height: 45px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Turut Mengundang</h1> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="max-w-md mx-auto text-center aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(54, 54, 54);">✔ Ir. H. Joko Widodo <br> ✔ Prof. Dr. (H.C.) K. H. Ma'ruf Amin</p></div> <div class="py-6 px-2.5 lg:px-5 w-full max-w-4xl flex flex-col justify-center items-center"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" class="uppercase text-center mb-4 aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 25px; line-height: 45px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Adab Walimah</h1> <img src="https://satucerita.eventdigital.id/themes/_assets/images/panduan/walimah/default.png" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="500" class="w-full max-w-md object-cover object-center mx-auto mt-4 rounded-2xl aos-init"></div></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none opacity-50"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bridge.webp" alt="Bridge Ornament" class="w-full h-[25vh] sm:h-[30vh] object-cover object-bottom"></div></section> <section class="relative w-full z-30 pointer-events-none border-t-4 border-b-4" style="border-color: rgb(154, 110, 118); background-color: rgb(230, 222, 216);"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/border.webp" class="w-full h-auto object-cover object-top block"></section> <section class="w-full relative" style="background-color: rgb(230, 222, 216);"><div class="my-4 text-center z-10 relative"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600" class="mb-5 capitalize text-center aos-init" style="font-family: &quot;Imperial Script&quot;, cursive; font-weight: 400; font-style: normal; font-size: 50px; line-height: 50px; letter-spacing: 0%; color: rgb(154, 110, 118);">Gallery</h1> <div class="relative mx-5"><div class="video-embed overflow-hidden rounded-md" style="border: 4px solid rgb(154, 110, 118);"><iframe width="560" height="315" src="https://www.youtube.com/embed/eg1dkoB92CA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <div data-aos="zoom-in" class="w-full flex justify-center mt-6 aos-init"><div id="gallery-reverie" class="reverie-nanogallery ajakan-ng-gallery w-full max-w-[340px] mx-auto ngy2_container nGY2 nanogallery_gallerytheme_dark_gallery-reverie" style="overflow: visible;"><div class="nGY2Navigationbar"></div><div class="nanoGalleryLBarOff"><div></div><div></div><div></div><div></div><div></div></div><div class="nGY2Gallery" style="overflow: visible; opacity: 1;"><div class="nGY2GallerySub" style="overflow: visible; touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: none; width: 499px; height: 975px;"></div><div class="nGY2GalleryBottom"></div></div><div class="nGY2ConsoleParent"></div></div></div></div></div></section> <section id="section-gift-livestream" class="relative w-full mempelai-bg-section overflow-hidden" style="background-image: linear-gradient(rgba(230, 222, 216, 0.87) 60%, rgba(230, 222, 216, 0.61) 100%), url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/mempelai.webp&quot;); background-position: center center; background-repeat: no-repeat; background-size: cover; opacity: 1;"><div class="absolute pointer-events-none z-10 animate-wind-left" style="width: 280px; max-width: 75vw; height: auto; top: -60px; left: -170px; opacity: 1;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-2.webp" alt="Bunga Ornament Left Top" class="w-full h-auto object-contain"></div> <div class="absolute pointer-events-none z-10 animate-wind-right" style="width: 280px; max-width: 75vw; height: auto; top: 45%; right: -170px; opacity: 1;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bunga-2.webp" alt="Bunga Ornament Right Middle" class="w-full h-auto object-contain"></div> <div class="min-h-full pt-12 pb-44 md:pb-52 px-5 md:px-8 flex flex-col items-center justify-center gap-y-8 relative z-20"><div class="py-6 px-2.5 lg:px-5 w-full max-w-4xl flex flex-col justify-center items-center"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" class="uppercase text-center mb-5 aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 25px; line-height: 45px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Kirim Amplop</h1> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="max-w-md mx-auto mb-4 text-center aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(54, 54, 54);">Jika berkenan memberikan hadiah, bisa dikirim melalui rekening berikut</p> <button data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="py-3 px-8 rounded-full text-white shadow-md hover:opacity-95 active:scale-95 transition-all inline-flex items-center justify-center gap-2 relative z-30 mt-4 aos-init" style="background: linear-gradient(239.54deg, rgb(215, 165, 174) 0%, rgb(119, 75, 83) 100%); font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 13px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; text-transform: uppercase; color: rgb(255, 255, 255);"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current text-white"><path d="M20 6h-3.18C16.94 4.84 15.6 4 14 4c-1.33 0-2.43.68-3.08 1.69C10.27 4.68 9.17 4 7.84 4 6.24 4 4.9 4.84 4.7 6H1.84v4h1.17v10h18V10h1.15V6H20zm-6-0c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5h-3zm-6.16 0c.83 0 1.5.67 1.5 1.5h-3c0-.83.67-1.5 1.5-1.5zM3.84 8h6.33v2H3.84V8zm1.5 4h4.83v8H5.34v-8zm13.32 8h-4.83v-8h4.83v8zm1.5-10v2h-6.33V8h6.33z"></path></svg> <span>Gift</span></button> <!----></div> <div class="py-6 px-2.5 lg:px-5 w-full max-w-4xl flex flex-col justify-center items-center"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" class="uppercase text-center mb-5 aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 25px; line-height: 45px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Live Streaming</h1> <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" class="flex flex-col items-center gap-y-3 w-full aos-init"><a href="https://www.youtube.com/watch?v=eg1dkoB92CA" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="py-3 px-8 rounded-full text-white shadow-md hover:opacity-95 active:scale-95 transition-all inline-flex items-center justify-center gap-2 relative z-30 aos-init" style="background: linear-gradient(239.54deg, rgb(215, 165, 174) 0%, rgb(119, 75, 83) 100%); font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 13px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; text-transform: uppercase; color: rgb(255, 255, 255);"><i class="fab fa-youtube text-sm"></i> <span>Link Streaming Youtube</span></a> <!----> <a href="https://www.youtube.com/watch?v=eg1dkoB92CA" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="py-3 px-8 rounded-full text-white shadow-md hover:opacity-95 active:scale-95 transition-all inline-flex items-center justify-center gap-2 relative z-30 aos-init" style="background: linear-gradient(239.54deg, rgb(215, 165, 174) 0%, rgb(119, 75, 83) 100%); font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 13px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; text-transform: uppercase; color: rgb(255, 255, 255);"><i class="fab fa-tiktok text-sm"></i> <span>Link Streaming Tiktok</span></a> <a href="https://www.youtube.com/watch?v=eg1dkoB92CA" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" class="py-3 px-8 rounded-full text-white shadow-md hover:opacity-95 active:scale-95 transition-all inline-flex items-center justify-center gap-2 relative z-30 aos-init" style="background: linear-gradient(239.54deg, rgb(215, 165, 174) 0%, rgb(119, 75, 83) 100%); font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 13px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; text-transform: uppercase; color: rgb(255, 255, 255);"><i class="fas fa-video text-sm"></i> <span>Link Streaming Zoom</span></a></div></div></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none opacity-50"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/bridge.webp" alt="Bridge Ornament" class="w-full h-[25vh] sm:h-[30vh] object-cover object-bottom"></div></section> <section id="section-rsvp-filter-ig" class="w-full pt-12 pb-44 md:pb-48 px-5 relative overflow-hidden flex flex-col justify-center items-center mempelai-bg-section" style="background-image: linear-gradient(rgba(230, 222, 216, 0.5) 0%, rgba(230, 222, 216, 0.5) 100%), url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/mempelai.webp&quot;); background-position: center center; background-repeat: no-repeat; background-size: cover; opacity: 0.87;"><div class="w-full max-w-4xl mx-auto text-center z-10 relative flex flex-col justify-center items-center"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 25px; line-height: 45px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; text-transform: uppercase; color: rgb(154, 110, 118);" class="aos-init">Reservasi Tamu</h1> <canvas data-aos="fade-up" data-aos-offset="0" data-aos-duration="1200" id="qr" class="my-4 mx-auto aos-init" height="200" width="200" style="max-width: 150px; padding: 12px; background-color: white; border-radius: 20px;"></canvas> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" class="my-4 text-center aos-init" style="font-family: Inter, sans-serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Konfirmasi Kehadiran</p> <a target="_blank" onclick="showModalRsvp()" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" class="py-2.5 px-6 rounded-full text-white cursor-pointer inline-flex items-center justify-center gap-2 aos-init" style="background: linear-gradient(240.88deg, rgb(215, 165, 174) 0%, rgb(119, 75, 83) 100%); font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 13px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; text-transform: uppercase;"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current text-white"><path d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V7H19V19ZM17 12H7V10H17V12ZM14 15H7V13H14V15Z"></path></svg> <span>Kirim RSVP</span></a> <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600" class="mt-10 aos-init" style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 25px; line-height: 45px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; text-transform: uppercase; color: rgb(154, 110, 118);">Story Instagram</h1> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" class="my-4 text-center aos-init" style="font-family: Inter, sans-serif; font-weight: 400; font-style: normal; font-size: 15px; line-height: 27px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; color: rgb(43, 43, 43);">Bagikan momenmu melalui Story Instagram, lalu mention akun kami agar mudah kami repost.</p> <a href="https://www.instagram.com/stories/" target="_blank" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="py-2.5 px-6 rounded-full text-white cursor-pointer inline-flex items-center justify-center gap-2 aos-init" style="background: linear-gradient(240.88deg, rgb(215, 165, 174) 0%, rgb(119, 75, 83) 100%); font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 13px; line-height: 13px; letter-spacing: 0.5px; text-align: center; vertical-align: middle; text-transform: uppercase;"><i class="fab fa-instagram mr-1 text-sm"></i> <span>Story Instagram</span></a></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none overflow-hidden leading-none flex justify-between pr-0 pl-0"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/story-ig-flower.webp" alt="Story IG Flower Ornament Left" class="w-20 sm:w-24 h-auto block origin-bottom mb-2 -ml-2 sm:-ml-3"> <img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/story-ig-flower.webp" alt="Story IG Flower Ornament Right" class="w-20 sm:w-24 h-auto block origin-bottom mb-2 -mr-2 sm:-mr-3 -scale-x-100"></div></section> <section class="relative w-full z-30 pointer-events-none border-t-4 border-b-4" style="border-color: rgb(154, 110, 118); background-color: rgb(230, 222, 216);"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/border.webp" class="w-full h-auto object-cover object-top block"></section> <section id="section-ucapan" class="w-full pt-12 pb-16 px-5 relative overflow-hidden flex flex-col items-center mempelai-bg-section" style="background-image: linear-gradient(rgba(230, 222, 216, 0.5) 0%, rgba(230, 222, 216, 0.5) 100%), url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/mempelai.webp&quot;); background-size: cover; background-position: center bottom; background-repeat: no-repeat;"><div class="w-full max-w-xl mx-auto relative"><div class="text-center relative z-20"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" class="mb-6 capitalize aos-init" style="font-family: &quot;Imperial Script&quot;, cursive; font-weight: 400; font-style: normal; font-size: 55px; line-height: 55px; letter-spacing: 0px; text-align: center; vertical-align: middle; color: rgb(154, 110, 118);">Ucapan &amp; Doa</h1></div> <form data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" class="space-y-4 mb-10 aos-init"><div><label class="block font-poppins text-gray-700 text-sm mb-1">
+                      Nama
+                    </label> <input type="text" required="required" class="w-full py-2 px-3 rounded border border-gray-400 bg-white text-gray-800 focus:outline-none focus:border-gray-600 font-poppins text-sm"></div> <div><label class="block font-poppins text-gray-700 text-sm mb-1">
+                      Sosial Media
+                    </label> <input type="text" class="w-full py-2 px-3 rounded border border-gray-400 bg-white text-gray-800 focus:outline-none focus:border-gray-600 font-poppins text-sm"></div> <div><label class="block font-poppins text-gray-700 text-sm mb-1">
+                      Ucapan &amp; Doa
+                    </label> <textarea required="required" class="w-full py-2 px-3 rounded border border-gray-400 bg-white text-gray-800 focus:outline-none focus:border-gray-600 font-poppins text-sm h-28 resize-none"></textarea></div> <div><button type="submit" class="text-white py-2 px-5 rounded font-poppins text-sm font-medium transition-opacity disabled:opacity-50 shadow-sm" style="background: linear-gradient(239.94deg, rgb(215, 165, 174) 0%, rgb(119, 75, 83) 100%); color: rgb(255, 255, 255);"><span>Kirimkan Ucapan</span></button></div></form> <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" class="space-y-6 aos-init"><div class="space-y-1"><h3 style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 22px; line-height: 30.8px; letter-spacing: 0px; vertical-align: middle; color: rgb(154, 110, 118);"><span>Sari Wulandari</span></h3> <p class="font-poppins text-gray-700 text-sm leading-relaxed">Selamat menempuh hidup baru. Semoga rumah tangga kalian selalu dipenuhi kebahagiaan.</p> <!----></div><div class="space-y-1"><h3 style="font-family: Lora, serif; font-weight: 400; font-style: normal; font-size: 22px; line-height: 30.8px; letter-spacing: 0px; vertical-align: middle; color: rgb(154, 110, 118);"><span>Andi Pratama</span></h3> <p class="font-poppins text-gray-700 text-sm leading-relaxed">Turut berbahagia. Semoga menjadi keluarga yang sakinah, mawaddah, dan warahmah.</p> <!----></div> <!----></div></div></section> <section id="section-penutup" class="section-penutup relative w-full overflow-hidden pt-16 px-4 flex flex-col items-center text-center" style="background-color: rgb(231, 224, 211); min-height: 950px; padding-bottom: 220px;"><div class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-50 mempelai-bg-section" style="background-image: url(&quot;https://satucerita.eventdigital.id/themes/secret-garden/assets/mempelai.webp&quot;);"></div> <div class="relative z-10 w-full max-w-[390px] mx-auto flex flex-col items-center"><h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" class="font-vidaloka text-4xl sm:text-5xl font-normal text-center mb-4 capitalize aos-init" style="font-family: &quot;Imperial Script&quot;, cursive; color: rgb(154, 110, 118);">Thanks</h1> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="font-poppins text-xs sm:text-sm font-light text-center text-black mb-6 leading-relaxed aos-init">Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu kepada kedua mempelai.</p> <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="font-poppins text-xs sm:text-sm font-light text-center text-black mb-2 aos-init">Hormat Kami Yang Mengundang</p> <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" class="font-vidaloka font-normal text-3xl sm:text-4xl text-center mb-8 aos-init" style="font-family: &quot;Imperial Script&quot;, cursive; color: rgb(154, 110, 118);">Naufal dan Kaila</h1> <div data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="500" class="relative max-w-full mx-auto flex justify-center items-center my-4 aos-init"><div class="absolute z-40 pointer-events-none" style="right: -35px; top: -25px;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/right-border-closing.webp" alt="Right Border Closing Ornament" class="w-36 sm:w-44 h-auto block"></div> <div class="swiper mySwiper overflow-hidden swiper-initialized swiper-vertical swiper-backface-hidden" style="width: 260px; height: 386px; border-radius: 150px; border: 4px solid rgb(154, 110, 118); box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px 0px;"><div class="swiper-wrapper" id="swiper-wrapper-c581ed8944d3e4fa" aria-live="off" style="transition-duration: 0ms; transform: translate3d(0px, -756px, 0px); transition-delay: 0ms;"><div class="swiper-slide" style="height: 378px;" role="group" aria-label="1 / 5" data-swiper-slide-index="0"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/4.jpg" class="w-full h-full object-cover object-center"></div><div class="swiper-slide swiper-slide-prev" style="height: 378px;" role="group" aria-label="2 / 5" data-swiper-slide-index="1"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/5.jpg" class="w-full h-full object-cover object-center"></div><div class="swiper-slide swiper-slide-active" style="height: 378px;" role="group" aria-label="3 / 5" data-swiper-slide-index="2"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/6.jpg" class="w-full h-full object-cover object-center"></div><div class="swiper-slide swiper-slide-next" style="height: 378px;" role="group" aria-label="4 / 5" data-swiper-slide-index="3"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/7.jpg" class="w-full h-full object-cover object-center"></div><div class="swiper-slide" role="group" aria-label="5 / 5" data-swiper-slide-index="4" style="height: 378px;"><img src="https://satucerita.eventdigital.id/themes/_assets/demo/preview14/8.jpg" class="w-full h-full object-cover object-center"></div></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div> <div class="absolute z-40 pointer-events-none" style="left: -35px; bottom: 0px;"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/left-border-closing.webp" alt="Left Border Closing Ornament" class="w-36 sm:w-44 h-auto block"></div></div></div> <div class="absolute bottom-0 left-0 w-full z-10 pointer-events-none overflow-hidden leading-none"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/story-flower.webp" alt="Story Flower Ornament" class="w-full h-auto block scale-125 origin-bottom"></div></section> <section class="relative w-full z-30 pointer-events-none border-t-4 border-b-4" style="border-color: rgb(154, 110, 118); background-color: rgb(154, 110, 118);"><img src="https://satucerita.eventdigital.id/themes/secret-garden/assets/border.webp" class="relative z-10 w-full h-auto object-cover object-top block" style="filter: brightness(0) invert(0.9) sepia(0.2);"></section> <footer class="w-full text-center text-white py-4" style="background-color: rgb(154, 110, 118);"><div class="mb-4"><p class="text-white font-montserrat text-sm">
+        Powered by Satucerita
+    </p></div> <div class="flex justify-center items-center mb-2"><!----></div></footer> <!----> <div class="fixed z-50 right-4 bottom-8 w-10 h-10 rounded-full bg-red-cover text-white flex items-center justify-center shadow cursor-pointer"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg></div> <div onclick="showVoiceCommentModal()" class="fixed z-50 right-4 bottom-20 w-10 h-10 rounded-full bg-red-cover text-white flex items-center justify-center shadow cursor-pointer"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" fill="currentColor" color="currentColor"></path></svg></div> <audio src="https://s3.ap-southeast-1.wasabisys.com/ajakan-internal/music/Ghea Indrawari - 1000X.mp3" loop="" playsinline="" webkit-playsinline=""></audio></div></section></section></div>
+  <script>
+    let TYPE_API = "yes";
+    let TYPE_ORDER = "no";
+    let ORDER_URL = null;
+    let FETCH_COMMENT_URL = null;
+    let STORE_COMMENT_URL = null;
+    const BASE_URL = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window
+      .location.port : '');
+    const STATIC_URL = BASE_URL + "/themes/secret-garden";
+    const RESERVASI_URL = "https://satucerita.eventdigital.id/theme/preview/secret-garden/R3Vlc3Q=";
+
+    if (TYPE_API == "yes" && TYPE_ORDER == "yes") {
+      ORDER_URL = "theme";
+      FETCH_COMMENT_URL = BASE_URL + "/api/guest/" + ORDER_URL + "/comment";
+      STORE_COMMENT_URL = BASE_URL + "/api/guest/" + ORDER_URL + "/comment/store";
+    }
+
+    Vue.use(Toasted);
+    new Vue({
+      el: "#app",
+      mixins: [audioManagerMixin, coupleNamesMixin],
+      data: {
+        BASE_URL: BASE_URL,
+        STATIC_URL: STATIC_URL,
+        ORDER_URL: ORDER_URL,
+        RESERVASI_URL: RESERVASI_URL,
+        isLoading: false,
+        datas: {},
+        ewallets: [{
+          name: "akun_shopeepay",
+          icon: STATIC_URL + "/assets/shopee.png",
+          value: "SHOPEEPAY"}, {
+          name: "akun_dana",
+          icon: STATIC_URL + "/assets/dana.png",
+          value: "DANA"
+        }, {
+          name: "akun_ovo",
+          icon: STATIC_URL + "/assets/ovo.png",
+          value: "OVO"
+        }, {
+          name: "akun_gopay",
+          icon: STATIC_URL + "/assets/gopay.png",
+          value: "GOPAY"
+        }, {
+          name: "akun_link_aja",
+          icon: STATIC_URL + "/assets/linkaja.png",
+          value: "LINKAJA"}, {
+          name: "akun_isaku",
+          icon: STATIC_URL + "/assets/isaku.png",
+          value: "ISAKU"
+        }, ],
+        guestName: "Nama Tamu",
+        targetTime: null,
+        previewImage: null,
+        intervalId: null,
+        countdown: {
+          days: "00",
+          hours: "00",
+          minutes: "00",
+          seconds: "00"},
+        gallery: [],
+        swiperImage: [],
+        isSubmitting: false,
+        comments: [],
+        commentPage: 1,
+        commentsPerPage: 5,
+        comment: {
+          name: "",
+          sosmed: "",
+          message: ""},
+        fontCostum: "'Imperial Script', cursive",
+        linkQR: RESERVASI_URL,
+        isInvitationOpen: false,
+        galleryNanoInitialized: false,
+        isVideoEnded: false,
+        isVideoReady: false,
+        pendingVideoPlay: false,
+        aosResizeTimer: null,
+        paymentOpen: false,
+        bgMempelai: STATIC_URL + "/assets/mempelai.webp",
+        bgBukit: STATIC_URL + "/assets/bukit.webp",
+        bgBorder: STATIC_URL + "/assets/border.webp",
+        bgArch: STATIC_URL + "/assets/arch.webp",
+        bgComment: STATIC_URL + "/assets/mempelai.webp",
+        bunga1: STATIC_URL + "/assets/bunga-1.webp",
+        bunga2: STATIC_URL + "/assets/bunga-2.webp",
+        bgTop: STATIC_URL + "/assets/top.webp",
+        bgTwinFlower: STATIC_URL + "/assets/twin-flower.webp",
+        bgDresscode: STATIC_URL + "/assets/dresscode.webp",
+        bgBebek: STATIC_URL + "/assets/bebek.webp",
+        bgStoryFlower: STATIC_URL + "/assets/story-flower.webp",
+        bgBridge: STATIC_URL + "/assets/bridge.webp",
+        bgStoryIgFlower: STATIC_URL + "/assets/story-ig-flower.webp",
+        bgLeftBorderClosing: STATIC_URL + "/assets/left-border-closing.webp",
+        bgRightBorderClosing: STATIC_URL + "/assets/right-border-closing.webp"},
+      created() {
+        this.fetchInvitation();
+        this.startCountdown();
+        this.extractGuestName();
+        this.generateQRCode();
+      },
+      mounted() {
+        this.generateQRCode();
+        Vue.use(Toasted);
+        this.setupIntroVideo();
+        this.setupAosResizeRefresh();
+        this.$nextTick(() => {
+          this.refreshAos();
+        });
+      },
+      beforeDestroy() {
+        if (this.intervalId) {
+          clearInterval(this.intervalId);
+        }
+        if (this.aosResizeTimer) {
+          clearTimeout(this.aosResizeTimer);
+        }
+        if (this._onAosResize) {
+          window.removeEventListener('resize', this._onAosResize);
+        }
+        this.teardownAosObservers();
+      },
+      watch: {
+        isInvitationOpen(newVal) {
+          if (newVal) {
+            this.$nextTick(() => {
+              if (this.$refs.audio && this.datas?.global_data?.music) {
+                if (!this.$refs.audio.src) {
+                  this.$refs.audio.src = this.datas.global_data.music;
+                }
+                this.playAudio();
+              }
+              this.generateQRCode();
+            });
+          }
+        },
+        isVideoEnded(newVal) {
+          if (newVal) {
+            this.$nextTick(() => {
+              this.refreshAos();
+              this.bindAosVisibility();
+            });
+          }
+        }},
+      computed: {
+        tanggalCover() {
+          const raw = this.datas?.section_cover?.tanggal_cover || this.datas?.section_pembuka?.tanggal_countdown;
+          if (!raw) return '';
+
+          const monthsId = ['januari', 'februari', 'maret', 'april', 'mei', 'juni', 'juli', 'agustus', 'september', 'oktober', 'november', 'desember'];
+          const match = String(raw).match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
+          let date = null;
+
+          if (match) {
+            const monthIdx = monthsId.indexOf(match[2].toLowerCase());
+            if (monthIdx !== -1) {
+              date = new Date(parseInt(match[3], 10), monthIdx, parseInt(match[1], 10));
+            }
+          }
+
+          if (!date || isNaN(date.getTime())) {
+            date = new Date(raw);
+          }
+
+          if (isNaN(date.getTime())) return '';
+
+          const day = date.getDate().toString().padStart(2, "0");
+          const month = (date.getMonth() + 1).toString().padStart(2, "0");
+          const year = date.getFullYear();
+          return `${day} . ${month} . ${year}`;
+        },
+        paginatedComments() {
+          const start = (this.commentPage - 1) * this.commentsPerPage;
+          return this.comments.slice(start, start + this.commentsPerPage);
+        },
+        totalPages() {
+          return Math.ceil(this.comments.length / this.commentsPerPage) || 1;
+        }},
+      methods: {
+        parseScheduleDate(raw) {
+          if (!raw) return { dayName: '', dayNum: '', monthYear: '' };
+          const str = String(raw).replace(/<[^>]+>/g, '').trim();
+          let dayName = '';
+          let datePart = str;
+
+          if (str.includes(',')) {
+            const parts = str.split(',');
+            dayName = parts[0].trim().toUpperCase();
+            datePart = parts.slice(1).join(',').trim();
+          }
+
+          const match = datePart.match(/(\d{1,2})\s+([A-Za-z]+(?:\s+\d{4})?)/);
+          if (match) {
+            const dayNum = match[1];
+            const monthYear = match[2].toUpperCase();
+            if (!dayName) {
+              const daysEn = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+              const monthsId = ['januari', 'februari', 'maret', 'april', 'mei', 'juni', 'juli', 'agustus', 'september', 'oktober', 'november', 'desember'];
+              const monthMatch = datePart.match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
+              if (monthMatch) {
+                const mIdx = monthsId.indexOf(monthMatch[2].toLowerCase());
+                if (mIdx !== -1) {
+                  const d = new Date(parseInt(monthMatch[3], 10), mIdx, parseInt(monthMatch[1], 10));
+                  if (!isNaN(d.getTime())) {
+                    dayName = daysEn[d.getDay()];
+                  }
+                }
+              }
+            }
+            return { dayName, dayNum, monthYear };
+          }
+
+          const d = new Date(str);
+          if (!isNaN(d.getTime())) {
+            const daysEn = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+            const monthsEn = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+            return {
+              dayName: daysEn[d.getDay()],
+              dayNum: String(d.getDate()),
+              monthYear: `${monthsEn[d.getMonth()]} ${d.getFullYear()}`
+            };
+          }
+
+          return { dayName: '', dayNum: '', monthYear: '' };
+        },
+        openInvitation() {
+          this.isInvitationOpen = true;
+          this.isVideoEnded = false;
+          this.pendingVideoPlay = true;
+          // Play inside user gesture for iOS; same buffered element (policy B if not ready)
+          this.playIntroVideo();
+          requestAnimationFrame(() => {
+            this.$nextTick(() => {
+              this.mountIntroVideo();
+              this.refreshAos(true);
+              this.bindAosVisibility();
+              this.initSwiper();
+              // Layout settle: fonts/images can shift offsets after first paint
+              setTimeout(() => {
+                this.refreshAos();
+                this.bindAosVisibility();
+              }, 200);
+            });
+          });
+        },
+        openPayment() {
+          this.paymentOpen = !this.paymentOpen;
+        },
+        refreshAos(hard = false) {
+          if (typeof AOS === 'undefined') return;
+          if (hard) {
+            AOS.refreshHard();
+          } else {
+            AOS.refresh();
+          }
+        },
+        teardownAosObservers() {
+          if (this._aosIoScroller) {
+            this._aosIoScroller.disconnect();
+            this._aosIoScroller = null;
+          }
+          if (this._aosIoViewport) {
+            this._aosIoViewport.disconnect();
+            this._aosIoViewport = null;
+          }
+          if (this._onInvitationScroll && this.$refs.invitationScroller) {
+            this.$refs.invitationScroller.removeEventListener('scroll', this._onInvitationScroll);
+            this._onInvitationScroll = null;
+          }
+        },
+        /**
+         * AOS listens to window scroll, but invitation content scrolls inside
+         * overflow pane — elements stay opacity:0 without this. Use IO (once)
+         * + light throttled refresh while scrolling (replaces forever setInterval).
+         */
+        bindAosVisibility() {
+          if (typeof IntersectionObserver === 'undefined') {
+            this.refreshAos(true);
+            this.revealAosInView();
+            return;
+          }
+          const scroller = this.$refs.invitationScroller;
+          const markVisible = (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('aos-animate');
+              observer.unobserve(entry.target);
+            });
+          };
+
+          if (this._aosIoScroller) this._aosIoScroller.disconnect();
+          if (this._aosIoViewport) this._aosIoViewport.disconnect();
+
+          this._aosIoViewport = new IntersectionObserver(markVisible, {
+            root: null,
+            rootMargin: '40px 0px',
+            threshold: 0.01});
+
+          if (scroller) {
+            this._aosIoScroller = new IntersectionObserver(markVisible, {
+              root: scroller,
+              rootMargin: '80px 0px',
+              threshold: 0.01});
+
+            scroller.querySelectorAll('[data-aos]').forEach((el) => {
+              if (!el.classList.contains('aos-animate')) {
+                this._aosIoScroller.observe(el);
+              }
+            });
+
+            // Fallback: AOS position table still useful for nested transforms
+            if (!this._onInvitationScroll) {
+              let last = 0;
+              this._onInvitationScroll = () => {
+                const now = Date.now();
+                if (now - last < 120) return;
+                last = now;
+                this.refreshAos();
+              };
+              scroller.addEventListener('scroll', this._onInvitationScroll, { passive: true });
+            }
+          }
+
+          // Desktop left hero (outside scroller) — viewport observer
+          const appRoot = this.$el;
+          if (appRoot) {
+            appRoot.querySelectorAll('[data-aos]').forEach((el) => {
+              if (el.classList.contains('aos-animate')) return;
+              if (scroller && scroller.contains(el)) return;
+              this._aosIoViewport.observe(el);
+            });
+          }
+
+          // Sync pass: already-visible nodes (avoid blank frame waiting for IO)
+          this.revealAosInView();
+        },
+        revealAosInView() {
+          const scroller = this.$refs.invitationScroller;
+          const intersects = (el, rootEl) => {
+            const rect = el.getBoundingClientRect();
+            if (rootEl) {
+              const rootRect = rootEl.getBoundingClientRect();
+              return rect.bottom > rootRect.top - 80 && rect.top < rootRect.bottom + 80;
+            }
+            return rect.bottom > 0 && rect.top < (window.innerHeight || 0) + 40;
+          };
+          const appRoot = this.$el;
+          if (!appRoot) return;
+          appRoot.querySelectorAll('[data-aos]').forEach((el) => {
+            if (el.classList.contains('aos-animate')) return;
+            const inScroller = scroller && scroller.contains(el);
+            if (intersects(el, inScroller ? scroller : null)) {
+              el.classList.add('aos-animate');
+            }
+          });
+        },
+        setupAosResizeRefresh() {
+          this._onAosResize = () => {
+            if (this.aosResizeTimer) clearTimeout(this.aosResizeTimer);
+            this.aosResizeTimer = setTimeout(() => {
+              if (this.isInvitationOpen) {
+                this.refreshAos();
+                this.bindAosVisibility();
+              }
+            }, 180);
+          };
+          window.addEventListener('resize', this._onAosResize, { passive: true });
+        },
+        setupIntroVideo() {
+          const vid = document.getElementById('bg-video-main');
+          if (!vid) return;
+          const markReady = () => {
+            this.isVideoReady = true;
+            if (this.isInvitationOpen && this.pendingVideoPlay) {
+              this.playIntroVideo();
+            }
+          };
+          vid.addEventListener('canplaythrough', markReady);
+          vid.addEventListener('loadeddata', () => {
+            if (vid.readyState >= 2) this.isVideoReady = true;
+          });
+          vid.addEventListener('ended', () => {
+            this.isVideoEnded = true;
+            this.pendingVideoPlay = false;
+          });
+          if (vid.readyState >= 3) {
+            this.isVideoReady = true;
+          } else if (vid.readyState === 0) {
+            try {
+              vid.load();
+            } catch (e) {
+              /* ignore */
+            }
+          }
+        },
+        mountIntroVideo() {
+          const vid = document.getElementById('bg-video-main');
+          const slot = document.getElementById('bg-video-slot');
+          if (!vid || !slot) return;
+          if (vid.parentElement !== slot) {
+            vid.removeAttribute('style');
+            vid.className = 'w-full h-screen object-cover';
+            slot.appendChild(vid);
+          }
+        },
+        playIntroVideo() {
+          const vid = document.getElementById('bg-video-main');
+          if (!vid) return;
+          this.pendingVideoPlay = true;
+          // Always call play() in the open gesture (iOS unlock); retry on canplaythrough if needed
+          const p = vid.play();
+          if (p !== undefined) {
+            p.catch((err) => {
+              console.warn('Video play error:', err);
+            });
+          }
+        },
+        fetchInvitation() {
+          this.isLoading = true;
+          let fetchUrl = ORDER_URL ? BASE_URL + "/api/guest/invitation/" + ORDER_URL : BASE_URL +
+            '/api/guest/invitation/demo/fetch';
+          let fetchOptions = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"}};
+          if (!ORDER_URL) {
+            const lastPath = window.location.pathname.split('/').pop();
+            fetchOptions.body = JSON.stringify({
+              package_id: 4,
+              theme_path: lastPath
+            });
+          }
+          fetch(fetchUrl, fetchOptions)
+            .then((response) => response.json()).then((data) => {
+              this.datas = data.data.wedding;
+              if (typeof padInvitationMedia === "function") padInvitationMedia(this.datas);
+              this.gallery = this.datas.section_gallery?.gallery || [];
+              this.swiperImage = this.datas.section_gallery?.gallery || [];
+              if (this.gallery.length < 5) {
+                // Copy gallery items 3 times if less than 5 items
+                this.swiperImage = [...this.gallery, ...this.gallery, ...this.gallery];
+              }
+              if (this.datas.global_data.font_library) {
+                this.loadFont(this.datas.global_data.font_library);
+              }
+              this.fontCostum = (this.datas.global_data && this.datas.global_data.font) ? this.datas.global_data.font : "'Imperial Script', cursive";
+              this.targetTime = new Date(this.datas.section_pembuka.tanggal_countdown).getTime();
+              this.linkQR = this.datas.section_rsvp_qr.link_qr;
+              this.startCountdown();
+              this.generateQRCode();
+              if (this.datas.section_guest_book?.is_active) {
+                this.fetchComments();
+              }
+            }).catch((error) => {
+              console.error("There was an error fetching the invitation:", error);
+            }).finally(() => {
+              this.isLoading = false;
+            });
+        },
+        loadFont(fontUrl) {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = fontUrl;
+          link.onload = () => {
+            this.refreshAos();
+          };
+          document.head.appendChild(link);
+        },
+        extractGuestName() {
+          const urlParams = new URLSearchParams(window.location.search);
+          this.guestName = urlParams.get("to") || "Nama Tamu";
+        },
+        startCountdown() {
+          if (this.intervalId) {
+            clearInterval(this.intervalId);
+          }
+          this.intervalId = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = this.targetTime - now;
+            if (distance < 0) {
+              this.countdown.days = this.countdown.hours = this.countdown.minutes = this.countdown.seconds = "00";
+              clearInterval(this.intervalId);
+              return;
+            }
+            this.countdown.days = this.formatTime(Math.floor(distance / (1000 * 60 * 60 * 24)));
+            this.countdown.hours = this.formatTime(Math.floor(
+              (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            this.countdown.minutes = this.formatTime(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+            this.countdown.seconds = this.formatTime(Math.floor((distance % (1000 * 60)) / 1000));
+          }, 1000);
+        },
+        generateQRCode() {
+          if (this.linkQR) {
+            var qr = new QRious({
+              element: document.getElementById("qr"),
+              value: window.location.href.split('?')[0] + '/' + window.btoa(this.guestName),
+              size: 200});
+          }
+        },
+
+        formatTime(time) {
+          return time < 10 ? "0" + time : time;
+        },
+
+        initSwiper() {
+          const script = document.createElement("script");
+          script.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+          script.async = true;
+          document.body.appendChild(script);
+          this.$nextTick(() => {
+            this.initReverieNanoGallery();
+            var swiper = new Swiper(".mySwiper", {
+              direction: "vertical",
+              loop: true,
+              speed: 5000,
+              autoplay: {
+                delay: 3000}});
+            var swiperr = new Swiper(".mySwiperr", {
+              effect: "fade",
+              loop: true,
+              speed: 5000,
+              autoplay: {
+                delay: 3000}});
+            var swiperThumb = new Swiper(".swiperThumb", {
+              centeredSlides: true,
+              slidesPerView: 4,
+              speed: 2000,
+              effect: "slide",
+              autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true},
+              loop: true,
+              spaceBetween: 10});
+            var swiperGallery = new Swiper(".mySwiperGallery", {
+              loop: true,
+              thumbs: {
+                swiper: swiperThumb}});
+          });
+        },
+        splitAccount(account) {
+          return account.split("-");
+        },
+        fetchComments() {
+          if (FETCH_COMMENT_URL) {
+            fetch(FETCH_COMMENT_URL, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"}}).then((response) => response.json()).then((data) => {
+              if (this.datas.section_guest_book?.additional_comments) {
+                const additionalComment = {
+                  owner: this.datas.section_guest_book.additional_comments.name,
+                  sosmed: this.datas.section_guest_book.additional_comments.sosmed,
+                  content: this.datas.section_guest_book.additional_comments.comment};
+                this.comments = [additionalComment, ...data.data];
+              } else {
+                this.comments = data.data;
+              }
+            }).catch((error) => {
+              console.error("Error fetching comments:", error);
+            });
+          } else {
+            this.comments = [
+                { id: 1, owner: "Sari Wulandari", name: "Sari Wulandari", content: "Selamat menempuh hidup baru. Semoga rumah tangga kalian selalu dipenuhi kebahagiaan.", message: "Selamat menempuh hidup baru. Semoga rumah tangga kalian selalu dipenuhi kebahagiaan." },
+                { id: 2, owner: "Andi Pratama", name: "Andi Pratama", content: "Turut berbahagia. Semoga menjadi keluarga yang sakinah, mawaddah, dan warahmah.", message: "Turut berbahagia. Semoga menjadi keluarga yang sakinah, mawaddah, dan warahmah." }
+              ];
+          }
+        },
+        submitComment() {
+          if (!this.validateForm()) {
+            this.$toasted.show("Isi inputan Semuanya", {
+              position: "bottom-right",
+              type: "error",
+              duration: 2000});
+            return;
+          }
+          this.isSubmitting = true;
+          const formdata = new FormData();
+          formdata.append("name", this.comment.name);
+          formdata.append("sosmed", this.comment.sosmed);
+          formdata.append("comment", this.comment.message);
+          fetch(STORE_COMMENT_URL, {
+            method: "POST",
+            body: formdata}).then((response) => response.text()).then((result) => {
+            this.$toasted.show("Comment submitted successfully", {
+              position: "bottom-right",
+              type: "success",
+              duration: 2000});
+            this.fetchComments();
+            this.commentPage = 1;
+            this.isSubmitting = false;
+            this.resetForm();
+          }).catch((error) => {
+            this.$toasted.show("Error submitting comment!", {
+              position: "bottom-right",
+              type: "error",
+              duration: 2000});
+          });
+        },
+        prevCommentPage() {
+          if (this.commentPage > 1) {
+            this.commentPage--;
+          }
+        },
+        nextCommentPage() {
+          if (this.commentPage < this.totalPages) {
+            this.commentPage++;
+          }
+        },
+        validateForm() {
+          return (this.comment.name && this.comment.message);
+        },
+        formatGuestBookSosmed(val) {
+          if (val == null || String(val).trim() === "") return "";
+          const s = String(val).trim();
+          if (s.startsWith("@")) return s;
+          return "@" + s;
+        },
+        resetForm() {
+          this.comment.name = "";
+          this.comment.sosmed = "";
+          this.comment.message = "";
+        },
+        copyToClipboard(text) {
+          const showToast = () => this.$toasted.show("Berhasil disalin", {
+            position: "bottom-right",
+            type: "success",
+            duration: 2000});
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(showToast).catch(() => {
+              this._copyFallback(text, showToast);
+            });
+          } else {
+            this._copyFallback(text, showToast);
+          }
+        },
+        _copyFallback(text, cb) {
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          try { document.execCommand("copy"); cb(); } catch (e) {}
+          document.body.removeChild(ta);
+        },
+        openWhatsApp() {
+          window.open(`https://wa.me/${
+								this.datas.section_amplop.no_wa
+							}?text=${encodeURIComponent(this.datas.section_amplop.n_chat)}`, "_blank");
+        },
+        openSpecialGift() {
+          window.open(BASE_URL + '/' + ORDER_URL + '/gift/catalog?to=' + this.guestName, "_blank");
+        },
+        showPreview(index) {
+          this.previewImage = index;
+        },
+        closePreview() {
+          this.previewImage = null;
+        },
+        prevImage() {
+          if (this.previewImage > 0) {
+            this.previewImage--;
+          } else {
+            this.previewImage = this.datas.section_gallery.gallery.length - 1;
+          }
+        },
+        nextImage() {
+          if (this.previewImage < this.datas.section_gallery.gallery.length - 1) {
+            this.previewImage++;
+          } else {
+            this.previewImage = 0;
+          }
+        },
+        addToCalendar() {
+          if (!this.datas?.section_pembuka?.tanggal_countdown) return;
+          const title = encodeURIComponent(this.datas?.section_cover?.judul_utama || 'Wedding Day');
+          const startDate = new Date(this.datas.section_pembuka.tanggal_countdown)
+            .toISOString()
+            .replace(/-|:|\.\d{3}/g, "");
+          window.open(
+            "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" +
+              title +
+              "&dates=" +
+              startDate +
+              "/" +
+              startDate,
+            "_blank"
+          );
+        },
+        initReverieNanoGallery() {
+          if (this.galleryNanoInitialized) return;
+          const section = this.datas.section_gallery;
+          if (!section || !section.is_active) return;
+          this.galleryNanoInitialized = true;
+          if (typeof window.AjakanWeddingNanoGallery === "undefined") return console.error("AjakanWeddingNanoGallery tidak dimuat.");
+          window.AjakanWeddingNanoGallery.init({
+            elementId: "gallery-reverie",
+            sectionGallery: section,
+            assetsBase: "/themes/_commons",
+            logPrefix: "Secret Garden NanoGallery"
+          });
+        }}});
+  </script><div id="39J3MRWic" role="status" aria-live="polite" aria-atomic="false"></div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      easing: 'ease-out',
+      once: true,
+      offset: 0,
+      mirror: false});
+  </script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4453a1a1a5594232bd3fab47b67ab4f7&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+
+
+    
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" async=""></script><script src="/themes/_commons/js/jquery.nanogallery2.min.js" defer="" data-ajakan-wedding-nanogallery-js="1"></script></body>
+
+
+
+
+

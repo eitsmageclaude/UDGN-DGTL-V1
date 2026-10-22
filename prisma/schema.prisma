@@ -1,0 +1,298 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+  PARTNER
+}
+
+enum EventType {
+  WEDDING
+  KHITANAN
+  AQIQAH
+  WISUDA
+  BIRTHDAY
+  BUKBER
+  IDUL_FITRI
+  NATAL
+  SAVE_THE_DATE
+}
+
+enum InvitationStatus {
+  DRAFT
+  PUBLISHED
+  EXPIRED
+  SUSPENDED
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  FAILED
+  CANCELLED
+}
+
+model User {
+  id           String       @id @default(cuid())
+  name         String
+  email        String       @unique
+  phone        String?
+  password     String
+  role         Role         @default(USER)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  invitations  Invitation[]
+  orders       Order[]
+  partner      Partner?
+
+  @@index([email])
+}
+
+model Partner {
+  id             String       @id @default(cuid())
+  name           String
+  slug           String       @unique
+  domain         String?
+  logoUrl        String?
+  primaryColor   String       @default("#914853")
+  secondaryColor String       @default("#7a3a44")
+  commissionRate Float        @default(0.15)
+  userId         String?      @unique
+  user           User?        @relation(fields: [userId], references: [id])
+  createdAt      DateTime     @default(now())
+
+  invitations    Invitation[]
+  orders         Order[]
+
+  @@index([slug])
+}
+
+model Package {
+  id            String        @id @default(cuid())
+  name          String
+  slug          String        @unique
+  originalPrice Int
+  price         Int
+  activeDays    Int           // 2, 10, 30, 90, 150, 9999 (unlimited)
+  maxPhotos     Int
+  maxBlast      Int
+  maxEvents     Int
+  isPopular     Boolean       @default(false)
+  isUnlimited   Boolean       @default(false)
+  features      Json          // list of feature highlights
+  category      String        @default("wedding")
+  createdAt     DateTime      @default(now())
+
+  invitations   Invitation[]
+  orders        Order[]
+
+  @@index([slug])
+}
+
+model Theme {
+  id           String        @id @default(cuid())
+  name         String
+  slug         String        @unique
+  category     String        @default("wedding")
+  subCategory  String        @default("Modern") // Popular, New, Adat, Artistic, Modern, Legacy
+  previewImage String
+  colorSwatches Json         // Array of 3 hex colors
+  colorFamily  String        @default("rosegold")
+  isPopular    Boolean       @default(false)
+  isFreeTrial  Boolean       @default(true)
+  isActive     Boolean       @default(true)
+  description  String?       @db.Text
+  story        String?       @db.Text
+  bestFor      String?       @db.Text
+  invitationCount Int        @default(120)
+  guestCount   Int           @default(1500)
+  musicUrl     String?       @db.Text
+  fontFamily   String?       @default("Playfair Display")
+  createdAt    DateTime      @default(now())
+
+  invitations  Invitation[]
+
+  @@index([slug])
+  @@index([category])
+}
+
+model Invitation {
+  id              String            @id @default(cuid())
+  slug            String            @unique
+  userId          String
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  partnerId       String?
+  partner         Partner?          @relation(fields: [partnerId], references: [id])
+  themeId         String
+  theme           Theme             @relation(fields: [themeId], references: [id])
+  packageId       String
+  package         Package           @relation(fields: [packageId], references: [id])
+  eventType       EventType         @default(WEDDING)
+  title           String
+  
+  // Mempelai / Tokoh Acara
+  groomName       String?
+  groomShortName  String?
+  groomParents    String?
+  groomInstagram  String?
+  groomPhoto      String?
+
+  brideName       String?
+  brideShortName  String?
+  brideParents    String?
+  brideInstagram  String?
+  bridePhoto      String?
+
+  // Konten
+  musicUrl        String?
+  musicTitle      String?
+  quotes          String?           @db.Text
+  story           Json?
+  dresscode       String?
+  coverImage      String?
+  
+  // Status & Operasional
+  status          InvitationStatus  @default(PUBLISHED)
+  activeUntil     DateTime?
+  viewsCount      Int               @default(0)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  events          InvitationEvent[]
+  photos          GalleryPhoto[]
+  envelopes       DigitalEnvelope[]
+  guests          Guest[]
+  messages        GuestbookMessage[]
+  orders          Order[]
+  blastJobs       BlastJob[]
+
+  @@index([slug])
+  @@index([userId])
+  @@index([partnerId])
+}
+
+model InvitationEvent {
+  id           String     @id @default(cuid())
+  invitationId String
+  invitation   Invitation @relation(fields: [invitationId], references: [id], onDelete: Cascade)
+  title        String     // Akad Nikah, Resepsi, etc.
+  date         DateTime
+  startTime    String
+  endTime      String?
+  venueName    String
+  venueAddress String     @db.Text
+  mapUrl       String?
+  streamingUrl String?
+  order        Int        @default(0)
+
+  @@index([invitationId])
+}
+
+model GalleryPhoto {
+  id           String     @id @default(cuid())
+  invitationId String
+  invitation   Invitation @relation(fields: [invitationId], references: [id], onDelete: Cascade)
+  url          String
+  caption      String?
+  order        Int        @default(0)
+
+  @@index([invitationId])
+}
+
+model DigitalEnvelope {
+  id            String     @id @default(cuid())
+  invitationId  String
+  invitation    Invitation @relation(fields: [invitationId], references: [id], onDelete: Cascade)
+  bankName      String
+  accountNumber String
+  accountHolder String
+  qrCodeUrl     String?
+
+  @@index([invitationId])
+}
+
+model Guest {
+  id           String     @id @default(cuid())
+  invitationId String
+  invitation   Invitation @relation(fields: [invitationId], references: [id], onDelete: Cascade)
+  name         String
+  phone        String?
+  slug         String
+  category     String?    @default("Tamu")
+  pax          Int        @default(1)
+  isAttending  String?    @default("PENDING") // HADIR, TIDAK_HADIR, RAGU, PENDING
+  checkedIn    Boolean    @default(false)
+  checkedInAt  DateTime?
+  qrCode       String?    @db.Text
+  createdAt    DateTime   @default(now())
+
+  @@index([invitationId])
+  @@index([slug])
+}
+
+model GuestbookMessage {
+  id           String     @id @default(cuid())
+  invitationId String
+  invitation   Invitation @relation(fields: [invitationId], references: [id], onDelete: Cascade)
+  name         String
+  attendance   String     @default("HADIR")
+  message      String     @db.Text
+  voiceNoteUrl String?
+  createdAt    DateTime   @default(now())
+
+  @@index([invitationId])
+}
+
+model Order {
+  id            String      @id @default(cuid())
+  orderNumber   String      @unique
+  userId        String
+  user          User        @relation(fields: [userId], references: [id])
+  invitationId  String?
+  invitation    Invitation? @relation(fields: [invitationId], references: [id])
+  packageId     String
+  package       Package     @relation(fields: [packageId], references: [id])
+  partnerId     String?
+  partner       Partner?    @relation(fields: [partnerId], references: [id])
+  amount        Int
+  status        OrderStatus @default(PENDING)
+  paymentMethod String?
+  paymentUrl    String?
+  paidAt        DateTime?
+  createdAt     DateTime    @default(now())
+
+  @@index([orderNumber])
+  @@index([userId])
+}
+
+model BlastJob {
+  id              String      @id @default(cuid())
+  invitationId    String
+  invitation      Invitation  @relation(fields: [invitationId], references: [id], onDelete: Cascade)
+  messageTemplate String      @db.Text
+  totalCount      Int
+  sentCount       Int         @default(0)
+  status          String      @default("COMPLETED")
+  createdAt       DateTime    @default(now())
+
+  @@index([invitationId])
+}
+
+model CtaEvent {
+  id        String   @id @default(cuid())
+  eventType String
+  metadata  Json?
+  ip        String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([eventType])
+}
